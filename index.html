@@ -32,15 +32,19 @@ $(document).ready(function(){
   });
   
   $("#home").mouseenter(function(){
-      $(this).fadeTo("slow", 1);
+    $(this).fadeTo("slow", 1);
   });
   
+  //Use a setInterval to update time
   function date(){
-    var words = document.getElementById("date").innerHTML = Date();
-  }
-
-  date();
-  });
+    var date = new Date();
+    
+    document.getElementById("date").innerHTML = date;
+}
+  setInterval(function(){
+    date();
+  } , 100);
+});
     </script>
 <div id="home">
   <div id="nav">
