@@ -32,6 +32,7 @@ button:hover{
 }
 /* nav bar */
 ul {
+  display: flex;
   list-style-type: none;
   margin: 0px;
   padding: 0px;
@@ -39,21 +40,14 @@ ul {
 
 }
 
-li{
-  display: inline-block;
-}
-
 li a {
+  display: inline-block;
   text-decoration: none;
   color: white;
-  display: block;
   padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: #f44286;
   height: 30px;
   font-size: 18pt;
-  margin: 0px;
   transition: background 0.8s;
 }
 
@@ -63,34 +57,26 @@ li a:hover {
 }
 
 #nav {
+  opacity: 0.5;
+  text-align: center;
   position: fixed;
   width: 100%;
   background-color: #f44286;
-  height: 50px;
 }
 /* end of nav bar */
 #home{
   text-align: center;
   background-color: #3ad6f2;
   font-family: "Montserrat", sans-serif;
+  transition: background 1s;
 }
 
 #home:hover{
-  animation: colorinfo 2s alternate infinite;
-}
-
-@keyframes colorinfo{
-  from{
-    background-color: #3ad6f2;
-  }
-  to{
-    background-color: #ff4c4c;
-  }
+  background-color: #ff4c4c;
 }
 
 #email{
   text-align: center;
-  transition: box-shadow 2s;
 }
 
 #hideprojects{
