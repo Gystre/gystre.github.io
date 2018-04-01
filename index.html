@@ -5,10 +5,42 @@
     <link rel = "stylesheet" href = "style.css"</link>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Slabo+27px" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src = "main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">
   </head>
   <body>
+    <script>
+$(document).ready(function(){
+  $("input").blur(function(){
+    $(this).css("background-color", "#ffffff");
+  });
+  
+  $("input").focus(function(){
+    $(this).css("background-color", "#cccccc");
+  });
+  
+  $("#hideprojects").click(function(){
+    $("#news").fadeToggle();
+    $("#plural").fadeToggle("slow");
+    $("#howto").fadeToggle(1000);
+    $("#quad").fadeToggle(1500);
+    $("#passwordgen").fadeToggle(1850);
+  });
+  
+  $("#home").mouseleave(function(){
+    $(this).fadeTo("slow", 0.5);
+  });
+  
+  $("#home").mouseenter(function(){
+      $(this).fadeTo("slow", 1);
+  });
+  
+  function date(){
+    var words = document.getElementById("date").innerHTML = Date();
+  }
+
+  date();
+  });
+    </script>
 <div id="home">
   <div id="nav">
     <ul>
