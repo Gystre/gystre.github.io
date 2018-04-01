@@ -10,13 +10,14 @@
   <body>
     <script>
 $(document).ready(function(){
+  //Background color for input box
   $("input").blur(function(){
     $(this).css("background-color", "#ffffff");
   });
-  
-  $("input").focus(function(){
-    $(this).css("background-color", "#cccccc");
-  });
+  //Background color for input box when highlighted
+  // $("input").focus(function(){
+  //   $(this).css("background-color", "#cccccc");
+  // });
   
   $("#hideprojects").click(function(){
     $("#news").fadeToggle();
@@ -26,20 +27,20 @@ $(document).ready(function(){
     $("#passwordgen").fadeToggle(1850);
   });
   
-  $("#home").mouseleave(function(){
+  $("#nav").mouseleave(function(){
     $(this).fadeTo("slow", 0.5);
   });
   
-  $("#home").mouseenter(function(){
+  $("#nav").mouseenter(function(){
     $(this).fadeTo("slow", 1);
   });
-  
-  //Use a setInterval to update time
+  //Use a setTimeout and setInterval to update time
   function date(){
     var date = new Date();
     
     document.getElementById("date").innerHTML = date;
-}
+  }
+  
   setInterval(function(){
     date();
   } , 100);
