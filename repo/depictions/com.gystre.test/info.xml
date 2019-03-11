@@ -1,0 +1,20 @@
+<package>
+	<id>com.gystre.test</id>
+	<name>test tweak</name>
+	<version>1.0.0-1</version>
+	<compatibility>
+		<firmware>
+			<miniOS>11</miniOS>
+		</firmware>
+	</compatibility>
+	<dependencies>
+		<package>mobilesubstrate</package>
+	</dependencies>
+	<shortDescription>Simple test tweak</shortDescription>
+	<descriptionlist>
+		<description>Test tweak that replaces power down slider with button</description>
+	</descriptionlist>
+	<changelog>
+		<change>Adds a button</change>
+	</changelog>
+</package>

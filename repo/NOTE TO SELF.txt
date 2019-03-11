@@ -1,0 +1,6 @@
+add tweak to debs
+add depection to depictions
+add to packages
+compress to bz2
+
+then boom done
