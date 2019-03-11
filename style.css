@@ -124,3 +124,8 @@ h5{
 h3{
   margin: 0px;
 }
+
+a{
+    color: #000000;
+    text-decoration: none;
+}
