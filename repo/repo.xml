@@ -1,9 +1,9 @@
 <repo>
 	<footerlinks>
 		<link>
-			<name>Follow me on Twitter</name>
+			<name>My github</name>
 			<url>https://gystre.github.io</url>
-			<iconclass>fa fa-twitter</iconclass>
+			<iconclass>fa fa-github</iconclass>
 		</link>
 	</footerlinks>
 </repo>

@@ -7,9 +7,6 @@
 			<miniOS>11</miniOS>
 		</firmware>
 	</compatibility>
-	<dependencies>
-		<package>mobilesubstrate</package>
-	</dependencies>
 	<shortDescription>Simple test tweak</shortDescription>
 	<descriptionlist>
 		<description>Test tweak that replaces power down slider with button</description>
