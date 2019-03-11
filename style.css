@@ -75,10 +75,6 @@ li a:hover {
   background-color: #ff4c4c;
 }
 
-#email{
-  text-align: center;
-}
-
 #hideprojects{
    cursor: pointer;
    margin-bottom: 15px;
@@ -105,12 +101,6 @@ img:hover{
 .projdesc{
   background-color: #72ffcb;
   border: solid black 1px;
-}
-
-#emaildesc{
-  text-align: center;
-  font-weight: bold;
-  font-family: "Slabo 27px", serif;
 }
 
 #date{
