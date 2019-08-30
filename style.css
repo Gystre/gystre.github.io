@@ -14,11 +14,14 @@ nav{
 }
 
 .logo{
-    color: rgb(226, 226, 226);
-    color: rgb(0, 0, 0);
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 20px;
+}
+
+.logo a{
+    color: rgb(226, 226, 226);
+    text-decoration: none;
 }
 
 .nav-links{
@@ -54,7 +57,6 @@ nav{
 @media screen and (max-width: 1000px){
     .nav-links{
         width: 60%;
-        display: none;
     }
 }
 
@@ -68,7 +70,7 @@ nav{
         height: 92vh;
         top: 8vh;
         background-color: #3ad6f2;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         width: 55%; /* how much space the nav bar takes up */
@@ -86,6 +88,7 @@ nav{
 }
 
 .nav-active{
+    display: flex;
     transform: translateX(0%);
     transition: transform 0.5s ease-in;
 }
