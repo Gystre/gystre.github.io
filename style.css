@@ -80,7 +80,7 @@ nav{
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 300px){
     body{
         overflow-x: hidden;
     }
@@ -104,6 +104,11 @@ nav{
     .burger{
         display: block;
         cursor: pointer;
+    }
+
+    #home img{
+        margin: 30px;
+        float: bottom;
     }
 }
 
@@ -135,9 +140,30 @@ nav{
 }
 
 #home{
-    text-align: center;
     background-color: var(--container-bg-color);
     font-family: "Montserrat", sans-serif;
+}
+
+#home img{
+    margin: 30px;
+    margin-left: 50px;
+    float: left;
+}
+
+.home-container{
+    color: var(--text-bg-color);
+    margin: 35px;
+}
+
+.home-container h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(73, 81, 90);
+    margin-bottom: 6px;
+}
+
+.home-container h2{
+    color: var(--text-bg-color);
 }
 
 p{
