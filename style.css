@@ -1,6 +1,6 @@
 :root{
     --background-bg-color: #fafbfd;
-    --footer-bg-color: #00356a;
+    --footer-bg-color: #00587e;
     --text-bg-color: #dce9ef;
     --nav-color: #3286aa;
     --container-bg-color: #91bbd1;
@@ -162,8 +162,12 @@ p{
     padding: 5px;
 }
 
-#social-list a{
+#social-list{
+    list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+#social-list li{
     margin: 20px;
 }
