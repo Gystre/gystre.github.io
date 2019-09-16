@@ -31,9 +31,25 @@ const navSlide = () =>{
 
 navSlide();
 
+
 $(document).ready(function(){      
     setInterval(function(){
         document.getElementById("date").innerHTML = new Date();
     } , 100);
+    
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("nav-bar").style.top = "0";
+        } else {
+            document.getElementById("nav-bar").style.top = "-75px";
+        }
+        document.getElementById("nav-bar").style.bottom = "0";
+        document.getElementById("nav-bar").style.right = "0";
+        document.getElementById("nav-bar").style.left = "0";
+        prevScrollpos = currentScrollPos;
+    }
 });
 

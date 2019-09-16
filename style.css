@@ -25,11 +25,18 @@ body{
 
 nav{
     display: flex;
+    
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
     font-family: "Poppins", sans-serif;
     background-color: var(--nav-color);
+    
+}
+
+#nav-bar{
+    position: fixed;
+    transition: top 0.3s; 
 }
 
 .logo{
@@ -80,7 +87,7 @@ nav{
     }
 }
 
-@media screen and (max-width: 300px){
+@media screen and (max-width: 500px){
     body{
         overflow-x: hidden;
     }
@@ -105,10 +112,11 @@ nav{
         display: block;
         cursor: pointer;
     }
+}
 
+@media screen and (max-width: 480px){
     #home img{
-        margin: 30px;
-        float: bottom;
+        float: none;
     }
 }
 
@@ -205,7 +213,7 @@ p{
 .project-container{
     margin: 10px;
     padding-left: 20px;
-    width: 70%;
+    width: 80%;
 }
 
 .project-container h2{
