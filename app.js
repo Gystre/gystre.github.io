@@ -46,9 +46,6 @@ $(document).ready(function(){
         } else {
             document.getElementById("nav-bar").style.top = "-75px";
         }
-        document.getElementById("nav-bar").style.bottom = "0";
-        document.getElementById("nav-bar").style.right = "0";
-        document.getElementById("nav-bar").style.left = "0";
         prevScrollpos = currentScrollPos;
     }
 });

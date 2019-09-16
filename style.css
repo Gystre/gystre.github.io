@@ -36,6 +36,9 @@ nav{
 
 #nav-bar{
     position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     transition: top 0.3s; 
 }
 
