@@ -159,6 +159,7 @@ nav{
     margin: 30px;
     margin-left: 50px;
     float: left;
+    cursor: context-menu;
 }
 
 .home-container{
