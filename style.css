@@ -58,6 +58,7 @@ nav{
     display: flex;
     justify-content: space-around;
     width: 30%;
+    transition: top 0.3s; 
 }
 
 .nav-links li{
