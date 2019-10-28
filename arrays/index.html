@@ -40,13 +40,14 @@
 
         <h1>Sort arrays!</h1>
         <input placeholder="size" type="number" value="10" id="size">
-        <button onclick="generate()">Generate array!</button>
+        <input placeholder="delay" type="number" value = "10" id="delay">
+        <button onclick="generate()">Generate</button>
         <select id="selection">
             <option value="bubble">Bubble</option>
         </select>
-        <button onclick="sort()">Sort!</button>
+        <button id="sort-button" onclick="sort()">Sort</button>
 
-        <div id = "elementContainer"></div>
+        <div id = "element-container"></div>
 
         <footer id = "footer">
             <div id="social-container">

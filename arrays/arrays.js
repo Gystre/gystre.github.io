@@ -1,8 +1,12 @@
 var nums = new Array();
 var sorted = false;
 
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
 function generate(){
-    var div = document.getElementById("elementContainer");
+    var div = document.getElementById("element-container");
     while(div.firstChild){
         div.removeChild(div.firstChild);
     }
@@ -23,22 +27,27 @@ function generate(){
         var element = document.createElement("DIV");
         element.id = i;
         element.innerHTML = nums[i];
-        document.getElementById("elementContainer").append(element);
+        element.style.display = "block";
+        element.style.marginLeft = size / 1.25;
+        document.getElementById("element-container").append(element);
     }
 
     sorted = false;
 }
 
-function sort(){
+const sort = async() => {
     if(sorted)
         generate();
 
+    document.getElementById("sort-button").style.pointerEvents = "none";
+    document.getElementById("sort-button").innerHTML = "Wait!";
     var sel = document.getElementById("selection");
     if(sel.value = "bubble"){
         for(var i = 0; i < nums.length; i++){
             for(var c = 1; c < nums.length-i; c++){
                 if(nums[c-1] > nums[c]){
                     //swap
+                    await sleep(document.getElementById("delay").value);
                     var tempdiv = document.getElementById(c-1).innerHTML;
                     var temp = nums[c-1];
                     document.getElementById(c-1).innerHTML = document.getElementById(c).innerHTML;
@@ -48,12 +57,13 @@ function sort(){
                 }
             }
         }
-        console.log(nums);
-        // var temp = document.getElementById("0").innerHTML;
-        // document.getElementById("0").innerHTML = document.getElementById("9").innerHTML;
-        // document.getElementById("9").innerHTML = temp;
     }
 
+
+    document.getElementById("sort-button").innerHTML = "Done!"
+    await sleep(500);
+    document.getElementById("sort-button").style.pointerEvents = "auto";
+    document.getElementById("sort-button").innerHTML = "Sort";
     sorted = true;
 }
 
