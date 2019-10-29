@@ -1,4 +1,4 @@
-var nums = new Array();
+var nums = new Array(   );
 var sorted = false;
 
 const sleep = (milliseconds) => {
@@ -30,13 +30,57 @@ function generate(){
         element.style.display = "inline-block";
         element.style.marginLeft = 6;
         element.style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-        element.style.height = size * nums[i];
+        element.style.height = size * nums[i] + 11;
         element.style.fontFamily = "Arial";
-        element.style.fontSize = size * 3;
+        element.style.fontSize = size * 2;  
         document.getElementById("element-container").append(element);
     }
 
     sorted = false;
+}
+
+//merge two halves of arr[l->m] and arr[m+1->r] into arr[]
+function merge(arr, l, m, r){
+    var n1 = m-l+1;
+    var n2 = r-m;
+
+    var L = new Array(n1);
+    var R = new Array(n2);
+
+    for(var i = 0; i < n1; i++){
+        L[i] = arr[l+i];
+    }
+    for(var i = 0; i < n2; i++){
+        R[i] = arr[m+1+i];
+    }
+
+    var i = 0;
+    var j = 0;
+    var left_start = l;
+
+    while(i < n1 && j < n2){
+        if(L[i] <= R[j]){
+            arr[left_start] = L[i];
+            i++;
+        }else{
+            arr[left_start] = R[j];
+            j++;
+        }
+        left_start++;
+    }
+
+    //copy remaining elements of each array if there are any left
+    while(i < n1){
+        arr[left_start] = L[i];
+        i++;
+        left_start++;
+    }
+
+    while(j < n2){
+        arr[left_start] = R[j];
+        j++;
+        left_start++;
+    }
 }
 
 const sort = async() => {
@@ -46,7 +90,7 @@ const sort = async() => {
     document.getElementById("sort-button").style.pointerEvents = "none";
     document.getElementById("sort-button").innerHTML = "Wait!";
     var sel = document.getElementById("selection");
-    if(sel.value = "bubble"){
+    if(sel.value === "bubble"){
         for(var i = 0; i < nums.length; i++){
             for(var c = 1; c < nums.length-i; c++){
                 if(nums[c-1] > nums[c]){
@@ -74,6 +118,14 @@ const sort = async() => {
                 }
             }
         }
+    }else if(sel.value === "merge"){
+        for(var i = 1; i <= nums.length-1; i *= 2){
+            for(var left_start = 0; left_start < nums.length-1; left_start += 2*i){
+                var mid = Math.min(left_start+i-1, nums.length-1);
+                var right_end = Math.min(left_start + 2*i-1, nums.length-1);
+                merge(nums, left_start, mid, right_end);
+            }
+        }
     }
 
 
@@ -86,6 +138,7 @@ const sort = async() => {
 
 document.addEventListener('keydown', function(event) {
     if(event.key == "Enter"){
+        sorted = false;
         generate();
     }
 });
