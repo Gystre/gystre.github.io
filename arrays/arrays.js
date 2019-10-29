@@ -27,8 +27,12 @@ function generate(){
         var element = document.createElement("DIV");
         element.id = i;
         element.innerHTML = nums[i];
-        element.style.display = "block";
-        element.style.marginLeft = size / 1.25;
+        element.style.display = "inline-block";
+        element.style.marginLeft = 6;
+        element.style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+        element.style.height = size * nums[i];
+        element.style.fontFamily = "Arial";
+        element.style.fontSize = size * 3;
         document.getElementById("element-container").append(element);
     }
 
@@ -46,14 +50,27 @@ const sort = async() => {
         for(var i = 0; i < nums.length; i++){
             for(var c = 1; c < nums.length-i; c++){
                 if(nums[c-1] > nums[c]){
-                    //swap
                     await sleep(document.getElementById("delay").value);
-                    var tempdiv = document.getElementById(c-1).innerHTML;
-                    var temp = nums[c-1];
+                    //visual swap
+                    document.getElementById(c).style.backgroundColor = "rgb(255, 0, 0)";
+                    document.getElementById(c-1).style.backgroundColor = "rgb(255, 0, 0)";
+                    var tempdiv = document.getElementById(c-1);
+                    var tempHeight = tempdiv.style.height;
+                    var tempText = tempdiv.innerHTML;
                     document.getElementById(c-1).innerHTML = document.getElementById(c).innerHTML;
+                    document.getElementById(c-1).style.height = document.getElementById(c).style.height;
+                    document.getElementById(c).innerHTML = tempText;
+                    document.getElementById(c).style.height = tempHeight;
+                    
+                    await sleep(document.getElementById("delay").value);
+                    //code swap
+                    var temp = nums[c-1];
                     nums[c-1] = nums[c];
-                    document.getElementById(c).innerHTML = tempdiv;
                     nums[c] = temp;
+
+                    await sleep(document.getElementById("delay").value);
+                    document.getElementById(c).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+                    document.getElementById(c-1).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
                 }
             }
         }
@@ -66,6 +83,12 @@ const sort = async() => {
     document.getElementById("sort-button").innerHTML = "Sort";
     sorted = true;
 }
+
+document.addEventListener('keydown', function(event) {
+    if(event.key == "Enter"){
+        generate();
+    }
+});
 
 $(document).ready(function(){
     generate();

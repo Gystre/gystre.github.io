@@ -171,8 +171,9 @@ nav{
 .home-container h1{
     font-size: 40px;
     font-weight: bold;
-    color: rgb(73, 81, 90);
+    color: rgb(40, 46, 51);
     margin-bottom: 6px;
+    text-decoration: underline;
 }
 
 .home-container h2{
