@@ -30,9 +30,9 @@ function generate(){
         element.style.display = "inline-block";
         element.style.marginLeft = 6;
         element.style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-        element.style.height = size * nums[i] + 11;
+        element.style.height = size * nums[i] + 15;
         element.style.fontFamily = "Arial";
-        element.style.fontSize = size * 2;  
+        element.style.fontSize = size * 2;
         document.getElementById("element-container").append(element);
     }
 
@@ -69,7 +69,7 @@ function merge(arr, l, m, r){
         left_start++;
     }
 
-    //copy remaining elements of each array if there are any left
+    //copy remaining elements of each array, prevents duplicates
     while(i < n1){
         arr[left_start] = L[i];
         i++;
@@ -94,10 +94,11 @@ const sort = async() => {
         for(var i = 0; i < nums.length; i++){
             for(var c = 1; c < nums.length-i; c++){
                 if(nums[c-1] > nums[c]){
-                    await sleep(document.getElementById("delay").value);
-                    //visual swap
                     document.getElementById(c).style.backgroundColor = "rgb(255, 0, 0)";
                     document.getElementById(c-1).style.backgroundColor = "rgb(255, 0, 0)";
+                    await sleep(document.getElementById("delay").value);
+
+                    //visual swap
                     var tempdiv = document.getElementById(c-1);
                     var tempHeight = tempdiv.style.height;
                     var tempText = tempdiv.innerHTML;
@@ -106,7 +107,6 @@ const sort = async() => {
                     document.getElementById(c).innerHTML = tempText;
                     document.getElementById(c).style.height = tempHeight;
                     
-                    await sleep(document.getElementById("delay").value);
                     //code swap
                     var temp = nums[c-1];
                     nums[c-1] = nums[c];
@@ -123,7 +123,22 @@ const sort = async() => {
             for(var left_start = 0; left_start < nums.length-1; left_start += 2*i){
                 var mid = Math.min(left_start+i-1, nums.length-1);
                 var right_end = Math.min(left_start + 2*i-1, nums.length-1);
+                document.getElementById(mid).style.backgroundColor = "rgb(255, 0, 0)";
+                document.getElementById(right_end).style.backgroundColor = "rgb(255, 0, 0)";
+
+                await sleep(document.getElementById("delay").value);
+                var tempdiv = document.getElementById(mid);
+                var tempHeight = tempdiv.style.height;
+                var tempText = tempdiv.innerHTML;
+                document.getElementById(mid).innerHTML = document.getElementById(left_start).innerHTML;
+                document.getElementById(mid).style.height = document.getElementById(left_start).style.height;
+                document.getElementById(left_start).innerHTML = tempText;
+                document.getElementById(left_start).style.height = tempHeight;
+
                 merge(nums, left_start, mid, right_end);
+
+                document.getElementById(mid).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+                document.getElementById(right_end).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
             }
         }
     }
