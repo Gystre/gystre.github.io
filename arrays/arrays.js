@@ -30,9 +30,15 @@ function generate(){
         element.style.display = "inline-block";
         element.style.marginLeft = 6;
         element.style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-        element.style.height = size * nums[i] + 15;
+        element.style.height = 9*nums[i] / size + 15;
+        element.style.width = 6*nums[i] / size + 10;
         element.style.fontFamily = "Arial";
-        element.style.fontSize = size * 2;
+        element.style.padding = "2px";
+        if(size > 100){
+            element.style.color = "transparent";
+        }else{
+            element.style.fontSize = 5/size;
+        }
         document.getElementById("element-container").append(element);
     }
 
@@ -58,6 +64,7 @@ function merge(arr, l, m, r){
     var j = 0;
     var left_start = l;
 
+    //break down and sort
     while(i < n1 && j < n2){
         if(L[i] <= R[j]){
             arr[left_start] = L[i];
@@ -127,14 +134,6 @@ const sort = async() => {
                 document.getElementById(right_end).style.backgroundColor = "rgb(255, 0, 0)";
 
                 await sleep(document.getElementById("delay").value);
-                var tempdiv = document.getElementById(mid);
-                var tempHeight = tempdiv.style.height;
-                var tempText = tempdiv.innerHTML;
-                document.getElementById(mid).innerHTML = document.getElementById(left_start).innerHTML;
-                document.getElementById(mid).style.height = document.getElementById(left_start).style.height;
-                document.getElementById(left_start).innerHTML = tempText;
-                document.getElementById(left_start).style.height = tempHeight;
-
                 merge(nums, left_start, mid, right_end);
 
                 document.getElementById(mid).style.backgroundColor = "rgba(128, 255, 229, 0.75)";

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Array Sorting Visualizer</title>
+        <title>Visual Array Sorter</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "/style.css"></link>
@@ -11,7 +11,6 @@
         <link rel="shortcut icon" href="https://gystre.github.io/assets/favicon.ico" />
         <link rel="icon" href="https://gystre.github.io/assets/favicon.ico" type="image/ico" />
         <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        
         <script src="arrays.js"></script>
     </head>
 
@@ -35,22 +34,32 @@
             </nav>
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="spacer">&nbsp;</div>
 
-        <h1>Sort arrays!</h1>
-        <input placeholder="size" type="number" value="10" id="size">
-        <input placeholder="delay" type="number" value = "10" id="delay">
-        <button onclick="generate()">Generate</button>
-        <select id="selection">
-            <option value="merge">Merge</option>
-            <option value="bubble">Bubble</option>
-        </select>
-        <button id="sort-button" onclick="sort()">Sort</button>
-
-        <div id = "element-container"></div>
+        <div id="table">
+            <div class="left">
+                <br>
+                <br>
+                <h1 id="title">Visual Array Sorter</h1>
+                <div id="controls">
+                    <div class="gen-text">size:</div>
+                    <input placeholder="size" type="number" value="10" id="size">
+                    <div class="gen-text">delay(ms):</div>
+                    <input placeholder="delay" type="number" value = "10" id="delay">
+                    <select id="selection">
+                        <option value="merge">Merge</option>
+                        <option value="bubble">Bubble</option>
+                    </select>
+                    <br>
+                    <button onclick="generate()">Generate</button>
+                    <button id="sort-button" onclick="sort()">Sort</button>
+                </div>
+            </div>
+            <div class="right">
+                <br>
+                <div id = "element-container"></div>
+            </div>
+        </div>
 
         <footer id = "footer">
             <div id="social-container">

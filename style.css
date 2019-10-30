@@ -23,6 +23,12 @@ body{
     background-color: var(--background-bg-color);
 }
 
+.spacer{
+    width: 100%;
+    height: 8vh;
+    background: var(--container-bg-color);
+}
+
 nav{
     display: flex;
     
