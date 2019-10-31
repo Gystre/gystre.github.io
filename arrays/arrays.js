@@ -30,14 +30,14 @@ function generate(){
         element.style.display = "inline-block";
         element.style.marginLeft = 6;
         element.style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-        element.style.height = 9*nums[i] / size + 15;
-        element.style.width = 6*nums[i] / size + 10;
+        element.style.height = 20*(nums[i] / size) + 15;
+        element.style.width = 9*(nums[i] / size) + 10;
         element.style.fontFamily = "Arial";
         element.style.padding = "2px";
         if(size > 100){
             element.style.color = "transparent";
         }else{
-            element.style.fontSize = 5/size;
+            element.style.fontSize = 4/size + 10;
         }
         document.getElementById("element-container").append(element);
     }
