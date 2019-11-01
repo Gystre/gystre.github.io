@@ -88,6 +88,7 @@ function merge(arr, l, m, r){
         j++;
         left_start++;
     }
+
 }
 
 const sort = async() => {
@@ -140,6 +141,20 @@ const sort = async() => {
                 document.getElementById(right_end).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
             }
         }
+    }else if(sel.value === "quick"){
+        var left = 0;
+        var loc = 0;
+        var right = nums.length - 1;
+        var flag = 0;
+
+        while(flag != 1){
+            while(nums[loc] <= nums[right] && loc != right){
+                
+            }
+        }
+
+
+
     }
 
 
