@@ -91,6 +91,69 @@ function merge(arr, l, m, r){
 
 }
 
+function partition(arr, low, high){
+    var pivot = arr[high];
+    var index = low-1; //index of smaller element
+
+    for(var i = low; i <= high; i++){
+        //if current element < pivot, increment index of smaller element and swap
+        if(arr[i] < pivot){
+            index++;
+            // document.getElementById(i).style.backgroundColor = "rgb(255, 0, 0)";
+            // document.getElementById(index).style.backgroundColor = "rgb(255, 0, 0)";
+
+            //await sleep(document.getElementById("delay").value);
+            // var tempdiv = document.getElementById(index);
+            // var tempHeight = tempdiv.style.height;
+            // var tempText = tempdiv.innerHTML;
+            // document.getElementById(index).innerHTML = document.getElementById(i).innerHTML;
+            // document.getElementById(index).style.height = document.getElementById(i).style.height;
+            // document.getElementById(i).innerHTML = tempText;
+            // document.getElementById(i).style.height = tempHeight;
+
+            var temp = arr[index];
+            arr[index] = arr[i];
+            arr[i] = temp;
+
+            // await sleep(document.getElementById("delay").value);
+            // document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+            // document.getElementById(index).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+        }
+    }
+
+    // document.getElementById(high).style.backgroundColor = "rgb(255, 0, 0)";
+    // document.getElementById(index+1).style.backgroundColor = "rgb(255, 0, 0)";
+
+    // await sleep(document.getElementById("delay").value);
+    // var tempdiv = document.getElementById(index+1);
+    // var tempHeight = tempdiv.style.height;
+    // var tempText = tempdiv.innerHTML;
+    // document.getElementById(index+1).innerHTML = document.getElementById(high).innerHTML;
+    // document.getElementById(index+1).style.height = document.getElementById(high).style.height;
+    // document.getElementById(high).innerHTML = tempText;
+    // document.getElementById(high).style.height = tempHeight;
+
+    var temp = arr[index+1];
+    arr[index+1] = arr[high];
+    arr[high] = temp;
+    
+    // await sleep(document.getElementById("delay").value);
+    // document.getElementById(high).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+    // document.getElementById(index+1).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+
+
+    return index + 1;
+}
+
+function quickSort(arr, low, high){
+    if(low < high){
+        var index = partition(arr, low, high);
+        
+        quickSort(arr, low, index-1); //before the partitioning index
+        quickSort(arr, index+1, high); //after the partitioning index
+    }
+}
+
 const sort = async() => {
     if(sorted)
         generate();
@@ -102,6 +165,7 @@ const sort = async() => {
         for(var i = 0; i < nums.length; i++){
             for(var c = 1; c < nums.length-i; c++){
                 if(nums[c-1] > nums[c]){
+                    //would turn this into a function but javascript cant pass by reference :P
                     document.getElementById(c).style.backgroundColor = "rgb(255, 0, 0)";
                     document.getElementById(c-1).style.backgroundColor = "rgb(255, 0, 0)";
                     await sleep(document.getElementById("delay").value);
@@ -142,19 +206,18 @@ const sort = async() => {
             }
         }
     }else if(sel.value === "quick"){
-        var left = 0;
-        var loc = 0;
-        var right = nums.length - 1;
-        var flag = 0;
-
-        while(flag != 1){
-            while(nums[loc] <= nums[right] && loc != right){
-                
-            }
-        }
-
-
-
+        quickSort(nums, 0, nums.length-1);
+        // var low = 0;
+        // var high = nums.length-1;
+        // while(low < high){
+        //     var index = partition(nums, low, high);
+        //     index = partition(nums, low, index-1);
+        //     high -= 1;
+        //     index = partition(nums, index+1, high);
+        //     low += 1;
+    
+        // }
+        // console.log(nums);
     }
 
 
