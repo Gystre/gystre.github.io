@@ -32,13 +32,12 @@ function generate(){
         element.style.backgroundColor = "rgba(128, 255, 229, 0.75)";
         element.style.height = 20*(nums[i] / size*5) + 15;
         element.style.width = 9*size + 10;
-        element.style.fontFamily = "Arial";
         element.style.padding = "2px";
-        if(size > 75){
-            element.style.color = "transparent";
+        if(size > 50){
+            element.style.fontSize = 0;
             element.style.width = 3 / (9*size + 10);
         }else{
-            element.style.fontSize = 4/size + 10;
+            element.style.fontSize = 80/ size + 10;
         }
         document.getElementById("element-container").append(element);
     }
