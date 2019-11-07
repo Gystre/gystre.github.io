@@ -1,3 +1,6 @@
+//to fix quick sort, need to convert recursion
+//to fix merge sort, need to learn how merge sort works
+
 var nums = new Array();
 var sorted = false;
 
@@ -66,7 +69,7 @@ function merge(arr, l, m, r){
     var j = 0;
     var left_start = l;
 
-    //break down and sort
+    //break down array into smallest units
     while(i < n1 && j < n2){
         if(L[i] <= R[j]){
             arr[left_start] = L[i];
@@ -75,73 +78,78 @@ function merge(arr, l, m, r){
             arr[left_start] = R[j];
             j++;
         }
+        document.getElementById(left_start).style.backgroundColor = "rgb(255, 0, 0)";
         left_start++;
     }
 
-    //copy remaining elements of each array, prevents duplicates
+
+    //take remaining elements of left array 
     while(i < n1){
         arr[left_start] = L[i];
+        document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
         i++;
         left_start++;
+
     }
 
     while(j < n2){
         arr[left_start] = R[j];
+        document.getElementById(j).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
         j++;
         left_start++;
     }
 
 }
 
-function partition(low, high) {
-    var pivot = nums[high];
+function partition(arr, low, high) {
+    var pivot = arr[high];
     var index = low-1; //index of smaller element
 
     for(var i = low; i <= high; i++){
         //if current element < pivot, increment index of smaller element and swap
-        if(nums[i] < pivot){
+        if(arr[i] < pivot){
             index++;
-            // document.getElementById(i).style.backgroundColor = "rgb(255, 0, 0)";
-            // document.getElementById(index).style.backgroundColor = "rgb(255, 0, 0)";
+            document.getElementById(i).style.backgroundColor = "rgb(255, 0, 0)";
+            document.getElementById(index).style.backgroundColor = "rgb(255, 0, 0)";
 
             // await sleep(document.getElementById("delay").value);
-            // var tempdiv = document.getElementById(index);
-            // var tempHeight = tempdiv.style.height;
-            // var tempText = tempdiv.innerHTML;
-            // document.getElementById(index).innerHTML = document.getElementById(i).innerHTML;
-            // document.getElementById(index).style.height = document.getElementById(i).style.height;
-            // document.getElementById(i).innerHTML = tempText;
-            // document.getElementById(i).style.height = tempHeight;
+            var tempdiv = document.getElementById(index);
+            var tempHeight = tempdiv.style.height;
+            var tempText = tempdiv.innerHTML;
+            document.getElementById(index).innerHTML = document.getElementById(i).innerHTML;
+            document.getElementById(index).style.height = document.getElementById(i).style.height;
+            document.getElementById(i).innerHTML = tempText;
+            document.getElementById(i).style.height = tempHeight;
 
-            var temp = nums[index];
-            nums[index] = nums[i];
-            nums[i] = temp;
+            var temp = arr[index];
+            arr[index] = arr[i];
+            arr[i] = temp;
 
             // await sleep(document.getElementById("delay").value);
-            // document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-            // document.getElementById(index).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+            document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+            document.getElementById(index).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
         }
     }
 
-    // document.getElementById(high).style.backgroundColor = "rgb(255, 0, 0)";
-    // document.getElementById(index+1).style.backgroundColor = "rgb(255, 0, 0)";
+    document.getElementById(high).style.backgroundColor = "rgb(255, 0, 0)";
+    document.getElementById(index+1).style.backgroundColor = "rgb(255, 0, 0)";
 
     // await sleep(document.getElementById("delay").value);
-    // var tempdiv = document.getElementById(index+1);
-    // var tempHeight = tempdiv.style.height;
-    // var tempText = tempdiv.innerHTML;
-    // document.getElementById(index+1).innerHTML = document.getElementById(high).innerHTML;
-    // document.getElementById(index+1).style.height = document.getElementById(high).style.height;
-    // document.getElementById(high).innerHTML = tempText;
-    // document.getElementById(high).style.height = tempHeight;
+    var tempdiv = document.getElementById(index+1);
+    var tempHeight = tempdiv.style.height;
+    var tempText = tempdiv.innerHTML;
+    document.getElementById(index+1).innerHTML = document.getElementById(high).innerHTML;
+    document.getElementById(index+1).style.height = document.getElementById(high).style.height;
+    document.getElementById(high).innerHTML = tempText;
+    document.getElementById(high).style.height = tempHeight;
 
-    var temp = nums[index+1];
-    nums[index+1] = nums[high];
-    nums[high] = temp;
+    var temp = arr[index+1];
+    arr[index+1] = arr[high];
+    arr[high] = temp;
     
     // await sleep(document.getElementById("delay").value);
-    // document.getElementById(high).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-    // document.getElementById(index+1).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+    document.getElementById(high).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+    document.getElementById(index+1).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
 
 
     return index + 1;
@@ -149,9 +157,77 @@ function partition(low, high) {
 
 function quickSort(low, high) {
     if(low < high){
-        var index = partition(low, high);
+        var index = partition(nums, low, high);
         quickSort(low, index-1); //before the partitioning index
         quickSort(index+1, high); //after the partitioning index
+    }
+}
+
+async function otherQuickSort(arr, size){
+    var MAX_LEVELS = 5; //how many elements in beg and end sub partitions, will never really exceed 2+
+    var pivot;
+    var beg = new Array(MAX_LEVELS);
+    var end = new Array(MAX_LEVELS);
+    var i = 0;
+    var L, R;
+
+    beg[0] = 0;
+    end[0] = size;
+
+    while(i >= 0){
+        L = beg[i];
+        R = end[i]-1;
+
+        if(L < R){
+            pivot = arr[L];
+            while(L < R){
+                while(arr[R] >= pivot && L < R){
+                    R--;
+                }
+
+                if(L < R){
+                    arr[L++] = arr[R];
+                }
+
+                while(arr[L] <= pivot && L < R){
+                    L++;
+                }
+
+                if(L < R){
+                    arr[R--] = arr[L];
+                }
+            }
+            arr[L] = pivot;
+            beg[i+1] = L+1;
+            end[i+1] = end[i];
+            end[i++] = L;
+
+            if(end[i]-beg[i] > end[i-1]-beg[i-1]){
+                // document.getElementById(i).style.backgroundColor = "rgb(255, 0, 0)";
+                // document.getElementById(i-1).style.backgroundColor = "rgb(255, 0, 0)";
+                
+                // var tempdiv = document.getElementById(i);
+                // var tempHeight = tempdiv.style.height;
+                // var tempText = tempdiv.innerHTML;
+                // document.getElementById(i).innerHTML = document.getElementById(i-1).innerHTML;
+                // document.getElementById(i).style.height = document.getElementById(i-1).style.height;
+                // document.getElementById(i-1).innerHTML = tempText;
+                // document.getElementById(i-1).style.height = tempHeight;
+
+                var temp = beg[i];
+                beg[i] = beg[i-1];
+                beg[i-1] = temp;
+
+                // document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+                // document.getElementById(i-1).style.backgroundColor = "rgba(128, 255, 229, 0.75)";            
+
+                temp = end[i];
+                end[i] = end[i-1];
+                end[i-1] = temp;
+            }
+        }else{
+            i--;
+        }
     }
 }
 
@@ -196,18 +272,15 @@ const sort = async() => {
             for(var left_start = 0; left_start < nums.length-1; left_start += 2*i){
                 var mid = Math.min(left_start+i-1, nums.length-1);
                 var right_end = Math.min(left_start + 2*i-1, nums.length-1);
-                document.getElementById(mid).style.backgroundColor = "rgb(255, 0, 0)";
-                document.getElementById(right_end).style.backgroundColor = "rgb(255, 0, 0)";
 
                 await sleep(document.getElementById("delay").value);
                 merge(nums, left_start, mid, right_end);
 
-                document.getElementById(mid).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-                document.getElementById(right_end).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
             }
         }
     }else if(sel.value === "quick"){
-        quickSort(0, nums.length-1);
+        //quickSort(0, nums.length-1);
+        otherQuickSort(nums, nums.length);
         // var low = 0;
         // var high = nums.length-1;
         // while(low < high){
