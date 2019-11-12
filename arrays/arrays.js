@@ -333,6 +333,23 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+
+function update(){
+    var sel = document.getElementById("selection");
+    if(sel.value === "selection"){
+        document.getElementById("desc").innerHTML = "Selection sort is an iterative sorting algorithm. It maintains two subarrays, one for all the unsorted elements and one for all the unsorted elements. The sort begins by finding the minimum element in the unsorted sub array and moves it to the sorted subarray (the back of the array)";
+        document.getElementById("comp").innerHTML = "comparisons: O(n<sup>2</sup>)";
+        document.getElementById("swap").innerHTML = "swaps: O(n)";
+    }else if(sel.value === "bubble"){
+        document.getElementById("desc").innerHTML = "nope";
+    }
+}
+
 $(document).ready(function(){
     generate();
+    update();
+
+    $("#selection").change(function(){
+        update();
+    })
 });
