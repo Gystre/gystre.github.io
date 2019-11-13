@@ -3,12 +3,12 @@
     font-family: Arial;
 }
 
-#table { 
-    width:100%;
+#table option{
+    width: 30%;
 }
 
-#table input{
-    width: 30%;
+#delay{
+    width: 20%;
 }
 
 .left { 
@@ -76,4 +76,30 @@
     padding: 5px;
     margin: 10px;
     border: 1px solid black;
+    font-size: 18px;
+}
+
+#size{
+    -webkit-appearance: none;
+    width: 70%;
+    height: 10px;
+    border-radius: 5px;
+    background:white;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#size:hover{
+    opacity: 1;
+}
+
+#size::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/assets/think.png");
 }

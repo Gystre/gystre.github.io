@@ -46,6 +46,7 @@ function generate(){
     }
 
     document.getElementById(nums.length-1).style.marginRight = 80 / size + 3;
+    document.getElementById("gen-text").innerHTML = "size: " + size;
 
     sorted = false;
 }
@@ -337,11 +338,12 @@ document.addEventListener('keydown', function(event) {
 function update(){
     var sel = document.getElementById("selection");
     if(sel.value === "selection"){
-        document.getElementById("desc").innerHTML = "Selection sort is an iterative sorting algorithm. It maintains two subarrays, one for all the unsorted elements and one for all the unsorted elements. The sort begins by finding the minimum element in the unsorted sub array and moves it to the sorted subarray (the back of the array)";
-        document.getElementById("comp").innerHTML = "comparisons: O(n<sup>2</sup>)";
-        document.getElementById("swap").innerHTML = "swaps: O(n)";
+        document.getElementById("desc").innerHTML = "Selection sort is a simple sorting algorithm good for large arrays of information. It maintains two subarrays, one for all the unsorted elements(left) and one for all the unsorted elements(right). The sort begins by selecting the first element of the unsorted array and compares it to the rest of the unsorted array, swapping it if it finds a smaller value. Once it has found the minimum value of the unsorted array, it will place it at the beginning of the sorted subarray and will continue until there are no more unsorted elements left.";
+        document.getElementById("comp").innerHTML = "Comparisons: O(n<sup>2</sup>)<br>Swaps: O(n)";
     }else if(sel.value === "bubble"){
-        document.getElementById("desc").innerHTML = "nope";
+        document.getElementById("desc").innerHTML = "Bubble sort is a simple sorting algorithm and is inefficient in most scenarios unless the elements of the array are in mostly sorted order. It starts with the first two elements of the array and swaps them if they are in an incorrect order. It will continue this process until the array is sorted. <br><br><strong>FUN FACT:</strong> it's called a \"bubble\" sort because elements slowly float up the array to their correct positions (pay attention to number 1 as the array is sorted)";
+        document.getElementById("comp").innerHTML = "Comparisons: O(n<sup>2</sup>)<br>Swaps: O(n<sup>2</sup>)";
+
     }
 }
 
@@ -351,5 +353,9 @@ $(document).ready(function(){
 
     $("#selection").change(function(){
         update();
+    })
+
+    $("#size").change(function(){
+        generate();
     })
 });
