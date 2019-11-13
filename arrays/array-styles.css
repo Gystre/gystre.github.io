@@ -49,6 +49,7 @@
 
 .gen-text{
     font-size: 15px;
+    padding-bottom: 10px;
 }
 
 #controls button:hover{
@@ -95,11 +96,12 @@
     opacity: 1;
 }
 
-#size::-webkit-slider-thumb{
+
+#size::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 23px;
-    height: 24px;
-    border: 0;
+    width: 25px;
+    height: 25px;
     background: url("/assets/think.png");
-}
+    cursor: pointer;
+  }

@@ -46,7 +46,7 @@ function generate(){
     }
 
     document.getElementById(nums.length-1).style.marginRight = 80 / size + 3;
-    document.getElementById("gen-text").innerHTML = "size: " + size;
+    document.getElementById("size-text").innerHTML = "size: " + size;
 
     sorted = false;
 }
