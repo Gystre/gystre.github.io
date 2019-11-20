@@ -1,3 +1,8 @@
+:root{
+    --select: rgb(255, 0, 0);
+    --unselect: rgba(128, 255, 229, 0.75);
+}
+
 #title{
     text-align: center;
     font-family: Arial;

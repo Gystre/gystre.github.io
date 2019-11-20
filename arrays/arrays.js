@@ -32,7 +32,7 @@ function generate(){
         element.innerHTML = nums[i];
         element.style.display = "inline-block";
         element.style.marginLeft = 80 / size + 3;
-        element.style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+        element.style.backgroundColor = "var(--unselect)";
         element.style.height = 20*(nums[i] / size*5) + 15;
         element.style.width = 9*size + 10;
         element.style.padding = "2px";
@@ -79,7 +79,7 @@ function merge(arr, l, m, r){
             arr[left_start] = R[j];
             j++;
         }
-        document.getElementById(left_start).style.backgroundColor = "rgb(255, 0, 0)";
+        document.getElementById(left_start).style.backgroundColor = "var(--select)";
         left_start++;
     }
 
@@ -87,7 +87,7 @@ function merge(arr, l, m, r){
     //take remaining elements of left array 
     while(i < n1){
         arr[left_start] = L[i];
-        document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+        document.getElementById(i).style.backgroundColor = "var(--unselect)";
         i++;
         left_start++;
 
@@ -95,7 +95,7 @@ function merge(arr, l, m, r){
 
     while(j < n2){
         arr[left_start] = R[j];
-        document.getElementById(j).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+        document.getElementById(j).style.backgroundColor = "var(--unselect)";
         j++;
         left_start++;
     }
@@ -110,8 +110,8 @@ function partition(arr, low, high) {
         //if current element < pivot, increment index of smaller element and swap
         if(arr[i] < pivot){
             index++;
-            document.getElementById(i).style.backgroundColor = "rgb(255, 0, 0)";
-            document.getElementById(index).style.backgroundColor = "rgb(255, 0, 0)";
+            document.getElementById(i).style.backgroundColor = "var(--select)";
+            document.getElementById(index).style.backgroundColor = "var(--select)";
 
             // await sleep(document.getElementById("delay").value);
             var tempdiv = document.getElementById(index);
@@ -127,13 +127,13 @@ function partition(arr, low, high) {
             arr[i] = temp;
 
             // await sleep(document.getElementById("delay").value);
-            document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-            document.getElementById(index).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+            document.getElementById(i).style.backgroundColor = "var(--unselect)";
+            document.getElementById(index).style.backgroundColor = "var(--unselect)";
         }
     }
 
-    document.getElementById(high).style.backgroundColor = "rgb(255, 0, 0)";
-    document.getElementById(index+1).style.backgroundColor = "rgb(255, 0, 0)";
+    document.getElementById(high).style.backgroundColor = "var(--select)";
+    document.getElementById(index+1).style.backgroundColor = "var(--select)";
 
     // await sleep(document.getElementById("delay").value);
     var tempdiv = document.getElementById(index+1);
@@ -149,8 +149,8 @@ function partition(arr, low, high) {
     arr[high] = temp;
     
     // await sleep(document.getElementById("delay").value);
-    document.getElementById(high).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-    document.getElementById(index+1).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+    document.getElementById(high).style.backgroundColor = "var(--unselect)";
+    document.getElementById(index+1).style.backgroundColor = "var(--unselect)";
 
 
     return index + 1;
@@ -204,8 +204,8 @@ async function otherQuickSort(arr, size){
             end[i++] = L;
 
             if(end[i]-beg[i] > end[i-1]-beg[i-1]){
-                // document.getElementById(i).style.backgroundColor = "rgb(255, 0, 0)";
-                // document.getElementById(i-1).style.backgroundColor = "rgb(255, 0, 0)";
+                // document.getElementById(i).style.backgroundColor = "var(--select)";
+                // document.getElementById(i-1).style.backgroundColor = "var(--select)";
                 
                 // var tempdiv = document.getElementById(i);
                 // var tempHeight = tempdiv.style.height;
@@ -219,8 +219,8 @@ async function otherQuickSort(arr, size){
                 beg[i] = beg[i-1];
                 beg[i-1] = temp;
 
-                // document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-                // document.getElementById(i-1).style.backgroundColor = "rgba(128, 255, 229, 0.75)";            
+                // document.getElementById(i).style.backgroundColor = "var(--unselect)";
+                // document.getElementById(i-1).style.backgroundColor = "var(--unselect)";            
 
                 temp = end[i];
                 end[i] = end[i-1];
@@ -244,8 +244,8 @@ const sort = async() => {
             for(var c = 1; c < nums.length-i; c++){
                 if(nums[c-1] > nums[c]){
                     //would turn this into a function but javascript cant pass by reference :P
-                    document.getElementById(c).style.backgroundColor = "rgb(255, 0, 0)";
-                    document.getElementById(c-1).style.backgroundColor = "rgb(255, 0, 0)";
+                    document.getElementById(c).style.backgroundColor = "var(--select)";
+                    document.getElementById(c-1).style.backgroundColor = "var(--select)";
                     await sleep(document.getElementById("delay").value);
 
                     //visual swap
@@ -263,8 +263,8 @@ const sort = async() => {
                     nums[c] = temp;
 
                     await sleep(document.getElementById("delay").value);
-                    document.getElementById(c).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-                    document.getElementById(c-1).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+                    document.getElementById(c).style.backgroundColor = "var(--unselect)";
+                    document.getElementById(c-1).style.backgroundColor = "var(--unselect)";
                 }
             }
         }
@@ -293,8 +293,8 @@ const sort = async() => {
         for(var i = 0; i < nums.length-1; i++){
             for(var c = i+1; c < nums.length; c++){
                 if(nums[i] > nums[c]){
-                    document.getElementById(c).style.backgroundColor = "rgb(255, 0, 0)";
-                    document.getElementById(i).style.backgroundColor = "rgb(255, 0, 0)";
+                    document.getElementById(c).style.backgroundColor = "var(--select)";
+                    document.getElementById(i).style.backgroundColor = "var(--select)";
                     await sleep(document.getElementById("delay").value);
 
                     //visual swap
@@ -312,10 +312,23 @@ const sort = async() => {
                     nums[c] = temp;
 
                     await sleep(document.getElementById("delay").value);
-                    document.getElementById(c).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
-                    document.getElementById(i).style.backgroundColor = "rgba(128, 255, 229, 0.75)";
+                    document.getElementById(c).style.backgroundColor = "var(--unselect)";
+                    document.getElementById(i).style.backgroundColor = "var(--unselect)";
                 }
             }
+        }
+    }else if(sel.value === "insertion"){
+        for(var i = 1; i < nums.length; i++){
+            var temp = nums[i];
+            var index = i-1; //index that the element will be placed in
+            document.getElementById(index).style.backgroundColor = "var(--select)";
+            while(index >= 0 && nums[index] > temp){
+                nums[index+1] = nums[index];
+                document.getElementById(index).style.backgroundColor = "var(--unselect)";
+                index -= 1;            
+            }
+
+            nums[index+1] = temp;
         }
     }
 
