@@ -1,58 +1,58 @@
-var h = 0;
-var m = 0;
-var s = 0;
-var totalSeconds = (h*3600) + (m*60) + s;
-var started = false;
+var h, m, s;
+var totalMs;
 var countdown;
+var initialMillis;
 
-//the actual countdown
-function timedCount(){
-    var totalHours = Math.trunc(totalSeconds / 3600);
-    var totalMinutes = Math.trunc((totalSeconds % 3600) / 60);
-    var secondsLeft = Math.trunc(totalSeconds % 60);
+//actual countdown function
+function timer(){
+    var totalHours = Math.trunc(totalMs / 3600000);
+    var totalMinutes = Math.trunc((totalMs / 60000) % 60);
+    var totalSeconds = Math.trunc((totalMs / 1000) % 60);
+    var msLeft = Math.trunc(totalMs % 1000);
+    document.title = totalHours + "h " + totalMinutes + "m " + totalSeconds + "s";
 
     document.getElementById("h").innerHTML = totalHours;
     document.getElementById("m").innerHTML = totalMinutes;
-    document.getElementById("s").innerHTML = secondsLeft;
-
-    document.getElementById("title").innerHTML = totalHours + "h " + totalMinutes + "m " + secondsLeft + "s";
-
-    if(totalSeconds == 0){
+    document.getElementById("s").innerHTML = totalSeconds;
+    document.getElementById("ms").innerHTML = msLeft;
+    if(totalMs <= 0){
         stop();
+        return;
     }else{
-        totalSeconds--;
-        countdown = setTimeout(timedCount, 1000);
+        var current = Date.now();
+        totalMs -= current - initialMillis; //subtract total elapsed time between function calls, ensures a consistent countdown
+        initialMillis = current;
     }
 }
 
 function start(){
-    if(!started){
-        started = true;
-        timedCount();
-    }
+    stop();
+    initialMillis = Date.now();
+    countdown = setInterval(timer, 1);
 }
 
 function stop(){
     clearTimeout(countdown);
-    started = false;
 }
 
 function reset(){
     stop();
 
-    //reset totalseconds
+    //reset totalMs
     h = parseInt(document.getElementById("h-input").value.length == 0 ? 0 : document.getElementById("h-input").value);
     m = parseInt(document.getElementById("m-input").value.length == 0 ? 0 : document.getElementById("m-input").value);
     s = parseInt(document.getElementById("s-input").value.length == 0 ? 0 : document.getElementById("s-input").value);
-    totalSeconds = (h*3600) + (m*60) + s;
+    totalMs = (h*3600000) + (m*60000) + (s*1000);
     
     //reset text
-    var totalHours = Math.trunc(totalSeconds / 3600);
-    var totalMinutes = Math.trunc((totalSeconds % 3600) / 60);
-    var secondsLeft = Math.trunc(totalSeconds % 60);
+    var totalHours = Math.trunc(totalMs / 3600000);
+    var totalMinutes = Math.trunc((totalMs / 60000) % 60);
+    var totalSeconds = Math.trunc((totalMs / 1000) % 60);
+    var msLeft = Math.trunc(totalMs % 1000);
     document.getElementById("h").innerHTML = totalHours;
     document.getElementById("m").innerHTML = totalMinutes;
-    document.getElementById("s").innerHTML = secondsLeft;
+    document.getElementById("s").innerHTML = totalSeconds;
+    document.getElementById("ms").innerHTML = msLeft;
 
     document.getElementById("title").innerHTML = "Timer!";
 }
@@ -62,20 +62,19 @@ $(document).ready(function(){
         h = parseInt(document.getElementById("h-input").value.length == 0 ? 0 : document.getElementById("h-input").value);
         m = parseInt(document.getElementById("m-input").value.length == 0 ? 0 : document.getElementById("m-input").value);
         s = parseInt(document.getElementById("s-input").value.length == 0 ? 0 : document.getElementById("s-input").value);
-        totalSeconds = (h*3600) + (m*60) + s;    
+        totalMs = (h*3600000) + (m*60000) + (s*1000);
     })
-
     $("#m-input").change(function(){
         h = parseInt(document.getElementById("h-input").value.length == 0 ? 0 : document.getElementById("h-input").value);
         m = parseInt(document.getElementById("m-input").value.length == 0 ? 0 : document.getElementById("m-input").value);
         s = parseInt(document.getElementById("s-input").value.length == 0 ? 0 : document.getElementById("s-input").value);
-        totalSeconds = (h*3600) + (m*60) + s;    
+        totalMs = (h*3600000) + (m*60000) + (s*1000);
     })
     $("#s-input").change(function(){
         h = parseInt(document.getElementById("h-input").value.length == 0 ? 0 : document.getElementById("h-input").value);
         m = parseInt(document.getElementById("m-input").value.length == 0 ? 0 : document.getElementById("m-input").value);
         s = parseInt(document.getElementById("s-input").value.length == 0 ? 0 : document.getElementById("s-input").value);
-        totalSeconds = (h*3600) + (m*60) + s;    
+        totalMs = (h*3600000) + (m*60000) + (s*1000);
     })
 
 })
