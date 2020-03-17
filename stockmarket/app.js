@@ -11,11 +11,11 @@ document.addEventListener('keydown', function(event) {
         document.getElementById("stock4worth").innerHTML = "$" + stock4worth.toFixed(2);
 
         var total = stock1worth + stock2worth  + stock3worth + stock4worth;
-        document.getElementById("totalvalue").innerHTML = total;
+        document.getElementById("totalvalue").innerHTML = total.toFixed(2);
         document.getElementById("lossorgain").innerHTML = (total - 100000).toFixed(2);
 
-        document.getElementById("dowchange").innerHTML = parseFloat(document.getElementById("dowstart").value) - parseFloat(document.getElementById("dowmarketday").value)
-        document.getElementById("naschange").innerHTML = parseFloat(document.getElementById("nasstart").value) - parseFloat(document.getElementById("nasmarketday").value)
+        document.getElementById("dowchange").innerHTML = (parseFloat(document.getElementById("dowstart").value) - parseFloat(document.getElementById("dowmarketday").value)).toFixed(2)
+        document.getElementById("naschange").innerHTML = (parseFloat(document.getElementById("nasstart").value) - parseFloat(document.getElementById("nasmarketday").value)).toFixed(2)
         
     }
 });
