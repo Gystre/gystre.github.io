@@ -1,7 +1,6 @@
 add tweak to debs
 add depection to depictions
-add to packages
-compress to bz2 with bzip2 in cygwin terminal
+add to packages and compress to bz2 with bzip2 in cygwin terminal
 get md5 checksum with FCIV 
 
 then boom done
