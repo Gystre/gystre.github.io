@@ -13,6 +13,6 @@
 		<description>A text widget for Xen HTML that adds editable HTML text for reminders and stuff</description>
 	</descriptionlist>
 	<changelog>
-		<change></change>
+		<change>Can edit text and font size</change>
 	</changelog>
 </package>
