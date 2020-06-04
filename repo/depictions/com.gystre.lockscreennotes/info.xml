@@ -1,6 +1,6 @@
 <package>
-	<id>com.gystre.test</id>
-	<name>test tweak</name>
+	<id>com.gystre.lockscreennotes</id>
+	<name>Lockscreen Notes</name>
 	<version>1.0.0</version>
 	<compatibility>
 		<firmware>
