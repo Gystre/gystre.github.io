@@ -1,0 +1,18 @@
+<package>
+	<id>com.gystre.test</id>
+	<name>test tweak</name>
+	<version>1.0.0</version>
+	<compatibility>
+		<firmware>
+			<miniOS>13</miniOS>
+            <otherVersions>unconfirmed</otherVersions>
+		</firmware>
+	</compatibility>
+	<shortDescription>Text widget for Xen HTML</shortDescription>
+	<descriptionlist>
+		<description>A text widget for Xen HTML that adds editable HTML text for reminders and stuff</description>
+	</descriptionlist>
+	<changelog>
+		<change></change>
+	</changelog>
+</package>
