@@ -40,7 +40,7 @@ nav{
     
 }
 
-#nav-bar{
+#nav-container{
     position: fixed;
     top: 0;
     right: 0;
@@ -193,12 +193,12 @@ p{
     color: #517379;
 }
 
-#footer{
+footer{
     background-color: var(--footer-bg-color);
     margin-top: auto;
 }
 
-#footer p{
+footer p{
     text-align: center;
     color: var(--text-bg-color);
     font-size: 14px;
