@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Kyle's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Slabo+27px" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">
+    <link rel="shortcut icon" href="https://gystre.github.io/favicon.ico" />
+    <link rel="icon" href="https://gystre.github.io/favicon.ico" type="image/ico" />
+  </head>
+  <body>
+    <script>
+$(document).ready(function(){
+  //Background color for input box
+  $("input").blur(function(){
+    $(this).css("background-color", "#ffffff");
+  });
+  //Background color for input box when highlighted
+  // $("input").focus(function(){
+  //   $(this).css("background-color", "#cccccc");
+  // });
+  
+  $("#hideprojects").click(function(){
+    $("#news").fadeToggle();
+    $("#plural").fadeToggle("slow");
+    $("#howto").fadeToggle(1000);
+    $("#quad").fadeToggle(1500);
+    $("#passwordgen").fadeToggle(1850);
+  });
+  
+  $("#nav").mouseleave(function(){
+    $(this).fadeTo("slow", 0.5);
+  });
+  
+  $("#nav").mouseenter(function(){
+    $(this).fadeTo("slow", 1);
+  });
+  //Use a setTimeout and setInterval to update time
+  function date(){
+    var date = new Date();
+    
+    document.getElementById("date").innerHTML = date;
+  }
+  
+  setInterval(function(){
+    date();
+  } , 100);
+});
+    </script>
+  <div id="nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#quad">Quad formula calculator</a></li>
+      <li><a href="#passwordgen">Password Generator</a></li>
+    </ul>
+  </div>
+
+<div id="home">
+  <br>
+  <br>
+  <h1>Kyle's Portfolio</h1>
+  <h3>An aspiring student developer</h3>
+  <p>kyleyu222@gmail.com</p>
+  <h3>It is currently:</h3>
+  <h3 id = "date"></h3>
+  <p>Here are some of my projects:</p>
+  
+  <button id="hideprojects">Toggle Hide projects</button>
+  <button id = "hideprojects"><a href="https://gystre.github.io/repo/" target="_blank">My cydia repository</a></button>
+</div>
+
+<br>
+
+<div id="projects">
+  <div id="quad">
+    <a href="https://codepen.io/saist/full/vxJRXm" target="_blank">
+      <img src="https://preview.ibb.co/kTEe3y/Screen_Shot_2018_05_10_at_9_35_16_AM.png" alt="Screen Shot 2018 05 10 at 9 35 16 AM" width = "800px" height = "400px"/>
+    </a>
+    <br>
+    <div class = "projdesc">
+      <p>In this project that I did with a partner, we took some user input and ran it through some javascript equations to put out two answers in a span element.</p>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  
+  <div id="passwordgen">
+    <a href="https://codepen.io/saist/full/aWbVye" target="_blank">
+      <img src="https://preview.ibb.co/h8OvbJ/Screen_Shot_2018_05_10_at_9_35_37_AM.png" alt="Screen Shot 2018 05 10 at 9 35 37 AM" width = "800px" height = "400px"/>
+    </a>
+    <br>
+    <div class = "projdesc">
+      <p>In this project that I also did with a partner, we took in user input and, using for loops, we took a random character from each string and put them together into a new string . We then repeat this the amount of times the user wanted the password to be and returned the string to be viewed in a span element (Don't use for actual passwords. The random strings are hard to remember.)</p>
+    </div>
+   </div>
+</div>
+
+<br>
+<br>
+
+  </body>
+</html>
