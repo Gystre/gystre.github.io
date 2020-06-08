@@ -1,87 +1,304 @@
-<html>
-    <head>
-        <title>Kyle's Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel = "stylesheet" href = "style.css"></link>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Slabo+27px" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="https://gystre.github.io/assets/favicon.ico" />
-        <link rel="icon" href="https://gystre.github.io/assets/favicon.ico" type="image/ico" />
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Kyle's Portfolio"/>
-        <meta property="og:description" content="Projects and stuff" />
-        <meta property="og:url" content="https://gystre.github.io" />
-        <meta property="og:image" content="https://gystre.github.io/assets/profile.jpg" />
-        <meta name="theme-color" content="#1affd1">
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    </head>
+<!-- current problems:
+    2. array sorter rectangles css wrong
+    4. some anchor tags don't open in new tabs
 
-    <body>
-        <div id="nav-container"></div>   
-        <div class="spacer">&nbsp;</div>
-        
-        <header id="home">
-            <a href="/secret"><img src="assets/profile.jpg" alt="profile"></a>
-            <div class="home-container">
-                <h1>Kyle Yu</h1>
-                <h2>Aspiring programmer</h2>
-                <h3>It is currently:</h3>
-                <h3 id = "date"></h3>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    
+    <title>Kyle's Portfolio</title>
+    
+    <meta name="description" content="Projects and stuff">
+    
+    <!-- Apple Stuff -->
+    <link rel="apple-touch-icon" href="https://gystre.github.io/assets/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Kyle's Portfolio">
+    
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Kyle's Portfolio">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="">
+    
+    <!-- MS Tile - for Microsoft apps-->
+    <meta name="msapplication-TileImage" content="">
+    
+    <!-- Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kyle's Portfolio"/>
+    <meta property="og:description" content="Projects and stuff" />
+    <meta property="og:url" content="https://gystre.github.io" />
+    <meta property="og:image" content="https://gystre.github.io/assets/profile.jpg" />
+    <meta name="theme-color" content="#1affd1">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kyle's Portfolio">
+    <meta name="twitter:description" content="Projects and stuff">
+    <meta name="twitter:image" content="https://gystre.github.io/assets/profile.jpg">
+    
+    <link rel="icon" type="image/ico" href="https://gystre.github.io/assets/favicon.ico">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/gjs-base.css">
+
+    <script async="" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <script async="" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <style data-css-anim="">
+        [data-anim-type]:not([data-anim-done]) { opacity: 0; }
+    </style>
+    
+</head>
+<body>
+    <div id="i1oh" class="gpd-navbar">
+        <div id="isu8" class="gpd-container">
+          <div id="ityl" class="gdp-row">
+            <div id="il58" class="cell">
+              <a id="itzkh" href="/" style="color:white;"><div id="iec3r" class="gpd-text">
+                <strong>Kyle Yu</strong>
+                </div></a>
             </div>
-            <br>
-        </header>
-
-        <div id="projects">
-            <div class="project-container">
-                <h2>Econ Stock Market Calculator</h2>
-                <div class="sub-text">March 10, 2020</div>
-                <hr>
-                <p>Just a mini calculator to simplify all the multiplying and subtraction for this project</p>
-                <a class="project-anchor" href="stockmarket">Try it</a>
-                <a href="/assets/stockmarketpicture.png" target="_blank"><img src="/assets/stockmarketpicture.png"></a>
+            <div id="imuc" class="cell gpd-navbar__menu">
+              <a id="irnv" href="" class="gpd-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z">
+                </path>
+                </svg></a>
             </div>
-
-            <div class="project-container">
-                <h2>Visual Array Sorter</h2>
-                <div class="sub-text">November 3, 2019</div>
-                <hr>
-                <p>Online visual array sorter for all your sorting needs!</p>
-                <a class="project-anchor" href="https://github.com/Gystre/gystre.github.io/tree/master/arrays" target="_blank">Github</a>
-                <br>
-                <a class="project-anchor" href="/arrays/">Try it</a>
-                <a href="/assets/arraycropped.png" target="_blank"><img src="/assets/arraycropped.png"></a>
+            <div id="i79gt" class="cell gpd-navbar__items">
+              <div id="ixtj1" class="gdp-row gpd-navbar__items-grid">
+                <div id="ip28l" class="cell gpd-navbar__item">
+                  <a id="iij0i" href="/" class="gpd-navbar__item-link">HOME</a>
+                </div>
+                <div id="ijjhn" class="cell gpd-navbar__item">
+                  <a id="ij0jw" href="#about-container" class="gpd-navbar__item-link">ABOUT</a>
+                </div>
+                <div class="cell gpd-navbar__item" id="i6r6s">
+                  <div class="dropdown-split btn-group dropdown" id="ir5eh">
+                    <a href="#project-container" role="button" class="btn btn-primary" id="iff5av">PROJECTS</a>
+                    <button aria-haspopup="true" data-toggle="dropdown" type="button" class="btn dropdown-toggle dropdown-toggle-split btn-primary" id="i7hshl"></button>
+                    <div role="menu" class="dropdown-menu" id="ivhjb8">
+                      <a role="presentation" href="/arrays" title="" class="dropdown-item" id="ihikyk">Array Sorter</a>
+                      <a role="presentation" href="/timer" class="dropdown-item" id="i4yqfk">Timer</a>
+                    </div>
+                  </div>
+                </div>
+                <div id="icj5d" class="cell gpd-navbar__item">
+                  <a id="ikg7w" href="/repo" target="_blank" class="gpd-navbar__item-link">REPO</a>
+                </div>
+              </div>
             </div>
-
-            <div class="project-container">
-                <h2>Blue Dolphin, a CSGO cheat</h2>
-                <hr>
-                <p>A half pasted, half original CS:GO internal cheat utilizing the imgui library for the in-game menu. Complete with aimbot, silent aim, recoil control, glow esp, bhop, and thirdperson.</p>
-                <a class="project-anchor" href="https://github.com/Gystre/Blue-Dolphin" target="_blank">Github</a>
-                <a href="https://camo.githubusercontent.com/fdebfbd95636bf490ea299369ea261af3f9069d0/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3232333936363434323434383631373437332f3537363937373231373634353537363139322f756e6b6e6f776e2e706e67" target="_blank"><img class="resizable-image" src="https://camo.githubusercontent.com/fdebfbd95636bf490ea299369ea261af3f9069d0/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3232333936363434323434383631373437332f3537363937373231373634353537363139322f756e6b6e6f776e2e706e67"></a>
-            </div>
-
-            <br>
-
-            <div class="project-container">
-                <h2>Space Invaders</h2>
-                <hr>
-                <p>Pretty cool 2d game space invaders using the javafx library.</p>
-                <a class="project-anchor" href="https://github.com/Gystre/Space-Invaders" target="_blank">Github</a>
-                <a href="/assets/spacegamepicture.png" target="_blank"><img src="/assets/spacegamepicture.png"></a>
-            </div>
+          </div>
         </div>
+      </div>
 
-        <div id="footer-container"></div>
+      <!-- landing section -->
+      <section id="iuocn"> 
+        <div id="ibqpsa" class="gpd-container">
+          <div class="row no-gutters" id="ijnyz6">
+            <div class="col" id="iex87e">
+            <h1 id="i5v44" data-anim-type="fadeInDown" data-anim-done="1" style="animation-name: fadeInDown;">Just an aspiring programmer.</h1>
+                <div id="incjp" data-anim-type="fadeInUp" class="gpd-text" data-anim-done="1" style="animation-name: fadeInUp;">"Learn from the past, live for the moment, and look towards the future"
+                <br>
+                <u>
+                  <em>Designed by Kyle</em>
+                </u>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <script>
-            $(function(){
-              $("#nav-container").load("/nav.html");
-              $("#footer-container").load("/footer.html");
-            });
-        </script>
-
-        <script src="app.js"></script>
-    </body>
+      <section id="imfkf" class="gpd-section">
+        <div id="about-container" class="gpd-container">
+          <div id="i5xwf" class="gdp-row">
+            <div id="iv4nl" class="cell">
+              <a href ="/secret/"><img id="iqoow" src="/assets/profile.jpg"/></a>
+            </div>
+            <div id="i4la6" class="cell">
+              <h1 id="ib63g">About me
+              </h1>
+              <div id="ii9of" class="gpd-text">I enjoy coding in various programming languages to create software, playing games with friends, and building computers. I work on personal projects in my free time such as Java 2D games, my website, and reverse engineering games to make it more fun to play (for me). My goal is to transfer to UC Berkeley and achieve a bachelors degree in Computer Science.
+                <br>
+                <br>Email: kyleyu222@gmail.com
+                <br>​​​​​​​Github:&nbsp;
+                <a data-cke-saved-href="https://github.com/Gystre/" href="https://github.com/Gystre/">https://github.com/Gystre/</a>
+                <br>Discord: kale#0104
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gpd-feature-section" id="i07nh">
+        <div class="gpd-container" id="ic3xo">
+          <div class="gdp-row" id="ioxaf">
+            <div class="cell">
+              <div class="gpd-feature-card" id="io0j1">
+                <div class="gpd-feature-card__header" id="i7tmc">
+                </div>
+                <div class="gpd-feature-card__body" id="ixn1g">
+                  <h2 class="gpd-feature-card__title" id="ilv3h">2019 - 2020
+                  </h2>
+                  <h4 class="gpd-feature-card__subtitle" id="ijw83">Age of YouTube
+                  </h4>
+                  <div class="gpd-feature-card__text" id="i5svh">In late 2019, I did a major redesign of my portfolio website, recoding it from the ground up and updating it occasionaly through 2020 to shape the website into what I (imagined) looked good. I got pretty close, but when it came to iterating over this design, I realized that my style of coding was incredibly messy. This led to one thing breaking many other things and so much undefined behavior on different devices that I said screw it and planned a redesign in the future which is what you are viewing right now!
+                  </div>
+                  <a id="iyjgh" href="/march222020/" target="_blank" class="gpd-link">View</a>
+                </div>
+              </div>
+            </div>
+            <div class="cell" id="iw63b">
+              <div class="gpd-feature-card">
+                <div class="gpd-feature-card__header" id="ipszo">
+                </div>
+                <div class="gpd-feature-card__body" id="ivejq">
+                  <h2 class="gpd-feature-card__title" id="i83ex">2018 - 2019
+                  </h2>
+                  <h4 class="gpd-feature-card__subtitle" id="iozlj">Age of Intro to CS class
+                  </h4>
+                  <div class="gpd-feature-card__text" id="ih1ti">My first real iteration of my portfolio website. It started as an assignment in my intro to computer science class and at the time the only tools I had access to was stack overflow for questions and codepen.io as my ide. I was pretty proud of it at the time but looking back on it, it looks utterly horrible.
+                  </div>
+                  <a id="iuxuv" href="/march102019/" target="_blank" class="gpd-link">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="i581d" class="gpd-section">
+        <div id="project-container" class="gpd-container">
+          <div id="iqokh-3-2-2">
+            <div id="ixd8r-3-2-2">
+              <h1 id="i1tjk">Terraritone
+              </h1>
+              <div id="iif8y-2-2" class="gpd-text">
+                <em><span>June 1, 2020</span></em>
+              </div>
+              <div id="i4ewx-3-2-2">
+              </div>
+              <div id="i5pm8" class="gpd-text">Autonomous bot that moves a Terraria player for you using a modified version of the A* pathfinding algorithm.
+                <br>
+                <a data-cke-saved-href="https://github.com/Gystre/Terraritone" href="https://github.com/Gystre/Terraritone">Github</a>
+              </div>
+            </div>
+            <img id="i8jf9" src="/assets/terraritone-demo.gif"/>
+          </div>
+          <div id="iqokh-3-2">
+            <div id="ixd8r-3-2">
+              <h1 id="i0bdj">Econ Stock Market Calculator
+              </h1>
+              <div id="iif8y-2" class="gpd-text">
+                <em id="iargt"><span style="color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; background-color: rgb(250, 251, 253); display: inline !important;">March 10, 2020</span></em>
+              </div>
+              <div id="i4ewx-3-2">
+              </div>
+              <div id="i5w8a" class="gpd-text">Just a mini calculator to simplify all the multiplying and subtraction for this project
+                <br>
+                <a data-cke-saved-href="https://github.com/Gystre/gystre.github.io/tree/master/stockmarket" href="https://github.com/Gystre/gystre.github.io/tree/master/stockmarket">Github</a>
+                <br>
+                <a data-cke-saved-href="/stockmarket/" href="/stockmarket/">Try it</a>
+              </div>
+            </div>
+            <img id="ilihf-2" src="/assets/stockmarketpicture.png"/>
+          </div>
+          <div id="iqokh-3">
+            <div id="ixd8r-3">
+              <h1 id="im7qu">Visual Array Sorter
+              </h1>
+              <div id="iif8y" class="gpd-text">
+                <em>November 3, 2019</em>
+              </div>
+              <div id="i4ewx-3">
+              </div>
+              <div id="i3uak" class="gpd-text">Online visual array sorter for all your sorting needs!​​​​​​
+                <br>
+                <a data-cke-saved-href="https://github.com/Gystre/gystre.github.io/tree/master/arrays" href="https://github.com/Gystre/gystre.github.io/tree/master/arrays">Github<br></a>
+                <a data-cke-saved-href="/arrays/" href="/arrays/">Try it</a>
+                <br>
+              </div>
+            </div>
+            <img id="ilihf" src="/assets/arraycropped.png"/>
+          </div>
+          <div id="iqokh-2">
+            <div id="ixd8r-2">
+              <h1 id="iqrok">Blue Dolphin, a CSGO cheat
+              </h1>
+              <div id="i4ewx-2">
+              </div>
+              <div id="iu54j" class="gpd-text">A half pasted, half original CS:GO internal cheat utilizing the imgui library for the in-game menu. Complete with aimbot, silent aim, recoil control, glow esp, bhop, and thirdperson.
+                <br>
+              </div>
+            </div>
+            <img id="ifein" src="https://camo.githubusercontent.com/fdebfbd95636bf490ea299369ea261af3f9069d0/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3232333936363434323434383631373437332f3537363937373231373634353537363139322f756e6b6e6f776e2e706e67"/>
+          </div>
+          <div id="iqokh">
+            <div id="ixd8r">
+              <h1 id="i4261">Space Invaders
+              </h1>
+              <div id="i4ewx">
+              </div>
+              <div id="iqlxj" class="gpd-text">Pretty cool 2d game space invaders using the javafx library.
+                <br>​​​​​​​
+                <a data-cke-saved-href="https://github.com/Gystre/Space-Invaders" href="https://github.com/Gystre/Space-Invaders">Github</a>
+                <br>
+              </div>
+            </div>
+            <img id="i2dv7" src="https://gystre.github.io/assets/spacegamepicture.png"/>
+          </div>
+        </div>
+      </section>
+      <section class="gpd-section" id="ixk6t">
+        <div id="iwqng" class="gpd-container">
+          <div class="row no-gutters" id="in7p9">
+            <div class="col" id="igyp4j">
+              <h3 id="ixe1kw">Designed by Kyle
+              </h3>
+              <a id="iaez7" href="#i1oh" class="gpd-link">^ Back to top ^</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>var items = document.querySelectorAll('#irnv');
+        for (var i = 0, len = items.length; i < len; i++) {
+          (function(){
+            var t,e=0,n='gjs-collapse',r='max-height',o='ease-in-out',i=.25,a=function(){
+              var t,e=document.createElement('void'),n={
+                transition:'transitionend',OTransition:'oTransitionEnd',MozTransition:'transitionend',WebkitTransition:'webkitTransitionEnd'};
+              for(t in n)if(void 0!==e.style[t])return n[t]}
+            (),s=function(t){
+              e=1;
+              var n=function(t){
+                var e=window.getComputedStyle(t),n=e.display,o=parseInt(e[r]);
+                if('none'!==n&&'0'!==o)return t.offsetHeight;
+                t.style.height='auto',t.style.display='block',t.style.position='absolute',t.style.visibility='hidden';
+                var i=t.offsetHeight;
+                return t.style.height='',t.style.display='',t.style.position='',t.style.visibility='',i}
+              (t),a=t.style;
+              a.display='block',a.transition=r+' '+i+'s '+o,a.overflowY='hidden',''==a[r]&&(a[r]=0),0==parseInt(a[r])?(a[r]='0',setTimeout(function(){
+                a[r]=n+'px'}
+                                                                                                                                           ,10)):a[r]='0'};
+            n in this||this.addEventListener('click',function(n){
+              if(n.preventDefault(),!e){
+                var o=this.closest('.gpd-navbar').querySelector(".gpd-navbar__items");
+                s(o),t||(o.addEventListener(a,function(){
+                  e=0;
+                  var t=o.style;
+                  0==parseInt(t[r])&&(t.display='',t[r]='')}
+                                           ),t=1)}
+            }
+                                            ),this[n]=1}
+           .bind(items[i]))();
+        }
+      </script>
+</body>
 </html>

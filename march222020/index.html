@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Kyle's Portfolio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "style.css"></link>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Slabo+27px" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="https://gystre.github.io/assets/favicon.ico" />
+        <link rel="icon" href="https://gystre.github.io/assets/favicon.ico" type="image/ico" />
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Kyle's Portfolio"/>
+        <meta property="og:description" content="Projects and stuff" />
+        <meta property="og:url" content="https://gystre.github.io" />
+        <meta property="og:image" content="https://gystre.github.io/assets/profile.jpg" />
+        <meta name="theme-color" content="#1affd1">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    </head>
+
+    <body>
+        <div id="nav-container"></div>   
+        <div class="spacer">&nbsp;</div>
+        
+        <header id="home">
+            <a href="/secret"><img src="/assets/profile.jpg" alt="profile"></a>
+            <div class="home-container">
+                <h1>Kyle Yu</h1>
+                <h2>Aspiring programmer</h2>
+                <h3>It is currently:</h3>
+                <h3 id = "date"></h3>
+            </div>
+            <br>
+        </header>
+
+        <div id="projects">
+            <div class="project-container">
+                <h2>Econ Stock Market Calculator</h2>
+                <div class="sub-text">March 10, 2020</div>
+                <hr>
+                <p>Just a mini calculator to simplify all the multiplying and subtraction for this project</p>
+                <a class="project-anchor" href="stockmarket">Try it</a>
+                <a href="/assets/stockmarketpicture.png" target="_blank"><img src="/assets/stockmarketpicture.png"></a>
+            </div>
+
+            <div class="project-container">
+                <h2>Visual Array Sorter</h2>
+                <div class="sub-text">November 3, 2019</div>
+                <hr>
+                <p>Online visual array sorter for all your sorting needs!</p>
+                <a class="project-anchor" href="https://github.com/Gystre/gystre.github.io/tree/master/arrays" target="_blank">Github</a>
+                <br>
+                <a class="project-anchor" href="/arrays/">Try it</a>
+                <a href="/assets/arraycropped.png" target="_blank"><img src="/assets/arraycropped.png"></a>
+            </div>
+
+            <div class="project-container">
+                <h2>Blue Dolphin, a CSGO cheat</h2>
+                <hr>
+                <p>A half pasted, half original CS:GO internal cheat utilizing the imgui library for the in-game menu. Complete with aimbot, silent aim, recoil control, glow esp, bhop, and thirdperson.</p>
+                <a class="project-anchor" href="https://github.com/Gystre/Blue-Dolphin" target="_blank">Github</a>
+                <a href="https://camo.githubusercontent.com/fdebfbd95636bf490ea299369ea261af3f9069d0/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3232333936363434323434383631373437332f3537363937373231373634353537363139322f756e6b6e6f776e2e706e67" target="_blank"><img class="resizable-image" src="https://camo.githubusercontent.com/fdebfbd95636bf490ea299369ea261af3f9069d0/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3232333936363434323434383631373437332f3537363937373231373634353537363139322f756e6b6e6f776e2e706e67"></a>
+            </div>
+
+            <br>
+
+            <div class="project-container">
+                <h2>Space Invaders</h2>
+                <hr>
+                <p>Pretty cool 2d game space invaders using the javafx library.</p>
+                <a class="project-anchor" href="https://github.com/Gystre/Space-Invaders" target="_blank">Github</a>
+                <a href="/assets/spacegamepicture.png" target="_blank"><img src="/assets/spacegamepicture.png"></a>
+            </div>
+        </div>
+
+        <div id="footer-container"></div>
+
+        <script>
+            $(function(){
+              $("#nav-container").load("nav.html");
+              $("#footer-container").load("footer.html");
+            });
+        </script>
+
+        <script src="app.js"></script>
+    </body>
+</html>

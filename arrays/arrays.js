@@ -31,6 +31,7 @@ function generate(){
         element.id = i;
         element.innerHTML = nums[i];
         element.style.display = "inline-block";
+        element.style.boxSizing = "border-box";
         element.style.marginLeft = 80 / size + 3;
         element.style.backgroundColor = "var(--unselect)";
         element.style.height = 20*(nums[i] / size*5) + 15;
