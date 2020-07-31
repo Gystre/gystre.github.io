@@ -37,6 +37,7 @@
     width:35px;
     height:35px;
     cursor:pointer;
+    color: inherit;
   }
   #i79gt{
     flex:0 1 auto;
