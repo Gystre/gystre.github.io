@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Warframe Ore Standing Calculator</title>
+
+        <link
+            rel="icon"
+            type="image/ico"
+            href="https://gystre.github.io/assets/favicon.ico"
+        />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="/nav-style.css" />
+        <link rel="stylesheet" href="/gjs-base.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.2.0/lory.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div id="i1oh" class="gpd-navbar">
+            <div id="isu8" class="gpd-container">
+                <div id="ityl" class="gdp-row">
+                    <div id="il58" class="cell">
+                        <a id="itzkh" href="/" style="color: white"
+                            ><div id="iec3r" class="gpd-text">
+                                <strong>Kyle Yu</strong>
+                            </div></a
+                        >
+                    </div>
+                    <div id="imuc" class="cell gpd-navbar__menu">
+                        <a id="irnv" href="" class="gpd-icon"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"
+                                ></path></svg
+                        ></a>
+                    </div>
+                    <div id="i79gt" class="cell gpd-navbar__items">
+                        <div id="ixtj1" class="gdp-row gpd-navbar__items-grid">
+                            <div id="ip28l" class="cell gpd-navbar__item">
+                                <a
+                                    href="/"
+                                    id="igf2a"
+                                    class="gpd-navbar__item-link"
+                                    >HOME</a
+                                >
+                            </div>
+                            <div id="ijjhn" class="cell gpd-navbar__item">
+                                <a
+                                    href="/#about-container"
+                                    id="i984z"
+                                    class="gpd-navbar__item-link"
+                                    >ABOUT</a
+                                >
+                            </div>
+                            <div id="i6r6s" class="cell gpd-navbar__item">
+                                <div class="dropdown-split btn-group dropdown">
+                                    <a
+                                        href="/#project-container"
+                                        role="button"
+                                        id="iff5av"
+                                        class="btn btn-primary"
+                                        >PROJECTS</a
+                                    >
+                                    <button
+                                        aria-haspopup="true"
+                                        data-toggle="dropdown"
+                                        type="button"
+                                        id="i7hshl"
+                                        class="
+                                            btn
+                                            dropdown-toggle
+                                            dropdown-toggle-split
+                                            btn-primary
+                                        "
+                                    ></button>
+                                    <div role="menu" class="dropdown-menu">
+                                        <a
+                                            role="presentation"
+                                            href="/arrays/"
+                                            title=""
+                                            class="dropdown-item"
+                                            >Array Sorter</a
+                                        >
+                                        <a
+                                            role="presentation"
+                                            href="/timer"
+                                            class="dropdown-item"
+                                            >Timer</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ijjhn" class="cell gpd-navbar__item">
+                                <a
+                                    id="ij0jw"
+                                    href="/katakana"
+                                    class="gpd-navbar__item-link"
+                                    >KATAKANA</a
+                                >
+                            </div>
+                            <div id="icj5d" class="cell gpd-navbar__item">
+                                <a
+                                    href="/repo/"
+                                    target="_blank"
+                                    class="gpd-navbar__item-link"
+                                    >REPO</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="ifit4" class="gpd-section">
+            <div id="ic20y" class="gpd-container">
+                <div id="container" style="display: block; text-align: center">
+                    <h1>warframe ore standing calculatorrrrrr</h1>
+                    <select id="selector">
+                        <option value="plains">plains of eidolon</option>
+                        <option value="fortuna">fortuna</option>
+                    </select>
+                    <div id="ores">
+                        <br />
+                        <div id="plains">
+                            <div>
+                                <!-- azurite -->
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/e/ee/Azurite.png"
+                                    width="50px"
+                                />
+                                Azurite
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="azuriteAmount"
+                                />
+                                * 50 =
+                                <span id="azuriteWorth" />
+                            </div>
+                            <div>
+                                <!-- devar -->
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/1/11/Devar.png"
+                                    width="50px"
+                                />
+                                Devar
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="devarAmount"
+                                />
+                                * 50 =
+                                <span id="devarWorth" />
+                            </div>
+                            <div>
+                                <!-- veridos -->
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/e/ec/Veridos.png"
+                                    width="50px"
+                                />
+                                Veridos
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="veridosAmount"
+                                />
+                                * 75 =
+                                <span id="veridosWorth" />
+                            </div>
+                            <div>
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/8/8d/Crimzian.png"
+                                    width="50px"
+                                />
+                                Crimzian
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="crimzianAmount"
+                                />
+                                * 100 =
+                                <span id="crimzianWorth" />
+                            </div>
+                            <div>
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/d/d9/Sentirum.png"
+                                    width="50px"
+                                />
+                                Sentirum
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="sentirumAmount"
+                                />
+                                * 400 =
+                                <span id="sentirumWorth" />
+                            </div>
+                            <div>
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/d/dc/Nyth.png"
+                                    width="50px"
+                                />
+                                Nyth
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="nythAmount"
+                                />
+                                * 400 =
+                                <span id="nythWorth" />
+                            </div>
+                        </div>
+                        <div id="fortuna" class="invisible">
+                            <div>
+                                <!-- phasmin -->
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/c/c3/Phasmin.png"
+                                    width="50px"
+                                />
+                                Phasmin
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="phasminAmount"
+                                />
+                                * 50 =
+                                <span id="phasminWorth" />
+                            </div>
+                            <div>
+                                <!-- noctrul -->
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/1/10/Noctrul.png"
+                                    width="50px"
+                                />
+                                Noctrul
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="noctrulAmount"
+                                />
+                                * 50 =
+                                <span id="noctrulWorth" />
+                            </div>
+                            <div>
+                                <!-- goblite -->
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/3/39/Goblite.png"
+                                    width="50px"
+                                />
+                                Goblite
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="gobliteAmount"
+                                />
+                                * 200 =
+                                <span id="gobliteWorth" />
+                            </div>
+                            <div>
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/b/b9/Amarast.png"
+                                    width="50px"
+                                />
+                                Amarast
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="amarastAmount"
+                                />
+                                * 500 =
+                                <span id="amarastWorth" />
+                            </div>
+                            <div>
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/a/a0/Zodian.png"
+                                    width="50px"
+                                />
+                                Zodian
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="zodianAmount"
+                                />
+                                * 1000 =
+                                <span id="zodianWorth" />
+                            </div>
+                            <div>
+                                <img
+                                    src="https://static.wikia.nocookie.net/warframe/images/a/a6/Thyst.png"
+                                    width="50px"
+                                />
+                                Thyst
+                                <input
+                                    type="number"
+                                    placeholder="amt"
+                                    id="thystAmount"
+                                />
+                                * 1000 =
+                                <span id="thystWorth" />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <br />
+                        <img
+                            src="https://static.wikia.nocookie.net/warframe/images/4/48/ReputationBlackx64.png"
+                            width="25px"
+                        />
+                        Total standing: <span id="totalStanding"></span>
+                    </div>
+                    <button id="clear">clear</button>
+                </div>
+            </div>
+        </section>
+        <script>
+            var items = document.querySelectorAll("#irnv");
+            for (var i = 0, len = items.length; i < len; i++) {
+                (function () {
+                    var t,
+                        e = 0,
+                        n = "gjs-collapse",
+                        r = "max-height",
+                        o = "ease-in-out",
+                        i = 0.25,
+                        a = (function () {
+                            var t,
+                                e = document.createElement("void"),
+                                n = {
+                                    transition: "transitionend",
+                                    OTransition: "oTransitionEnd",
+                                    MozTransition: "transitionend",
+                                    WebkitTransition: "webkitTransitionEnd",
+                                };
+                            for (t in n) if (void 0 !== e.style[t]) return n[t];
+                        })(),
+                        s = function (t) {
+                            e = 1;
+                            var n = (function (t) {
+                                    var e = window.getComputedStyle(t),
+                                        n = e.display,
+                                        o = parseInt(e[r]);
+                                    if ("none" !== n && "0" !== o)
+                                        return t.offsetHeight;
+                                    (t.style.height = "auto"),
+                                        (t.style.display = "block"),
+                                        (t.style.position = "absolute"),
+                                        (t.style.visibility = "hidden");
+                                    var i = t.offsetHeight;
+                                    return (
+                                        (t.style.height = ""),
+                                        (t.style.display = ""),
+                                        (t.style.position = ""),
+                                        (t.style.visibility = ""),
+                                        i
+                                    );
+                                })(t),
+                                a = t.style;
+                            (a.display = "block"),
+                                (a.transition = r + " " + i + "s " + o),
+                                (a.overflowY = "hidden"),
+                                "" == a[r] && (a[r] = 0),
+                                0 == parseInt(a[r])
+                                    ? ((a[r] = "0"),
+                                      setTimeout(function () {
+                                          a[r] = n + "px";
+                                      }, 10))
+                                    : (a[r] = "0");
+                        };
+                    n in this ||
+                        this.addEventListener("click", function (n) {
+                            if ((n.preventDefault(), !e)) {
+                                var o =
+                                    this.closest(".gpd-navbar").querySelector(
+                                        ".gpd-navbar__items"
+                                    );
+                                s(o),
+                                    t ||
+                                        (o.addEventListener(a, function () {
+                                            e = 0;
+                                            var t = o.style;
+                                            0 == parseInt(t[r]) &&
+                                                ((t.display = ""), (t[r] = ""));
+                                        }),
+                                        (t = 1));
+                            }
+                        }),
+                        (this[n] = 1);
+                }.bind(items[i])());
+            }
+        </script>
+    </body>
+</html>
