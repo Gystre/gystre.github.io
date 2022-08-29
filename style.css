@@ -96,12 +96,9 @@ body {
 #imfkf {
     padding: 50px 0 25px 0;
 }
-#about-container {
-    padding: 25px 0 0 0;
-}
 #iv4nl {
     align-self: center;
-    flex-basis: 20%;
+    flex-basis: 30%;
 }
 #profilePicture {
     border-radius: 50%;
@@ -231,7 +228,7 @@ body {
 #card2-image {
     background-image: url("https://gystre.github.io/assets/website%20circa%20march%2010%202019.PNG");
 }
-#ixk6t {
+#footer {
     background-color: rgba(109, 14, 133, 0.54);
     padding: 0 0 50px 0;
     background-image: linear-gradient(
