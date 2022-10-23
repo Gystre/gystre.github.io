@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Kyle's Portfolio</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -202,7 +203,7 @@
                             data-anim-done="1"
                             style="animation-name: fadeInDown"
                         >
-                            Just an aspiring programmer.
+                            Just an aspiring programmer
                         </h1>
                         <div
                             id="incjp"
@@ -241,23 +242,23 @@
                         <div class="gpd-text">
                             Kyle is a third year college student pursuing a
                             bachelors in Computer Science and is currently
-                            studying at California State University, East Bay. I
-                            really enjoy programming in my free time and I am
-                            currently looking for opportunities to make it my
+                            studying at California State University, East Bay.
+                            He really enjoys programming in his free time and is
+                            currently looking for opportunities to make it his
                             full time profession.
                             <br />
                             <br />LinkedIn:
                             <a
-                                data-cke-saved-href="https://www.linkedin.com/in/kyle-yu-3139a5140/"
                                 href="https://www.linkedin.com/in/kyle-yu-3139a5140/"
                                 target="_blank"
+                                rel="noreferrer"
                                 >https://www.linkedin.com/in/kyle-yu-3139a5140/</a
                             >
                             <br />Github:
                             <a
-                                data-cke-saved-href="https://github.com/Gystre/"
                                 href="https://github.com/Gystre/"
                                 target="_blank"
+                                rel="noreferrer"
                                 >https://github.com/Gystre/</a
                             >
                             <br />Email: kyleyu222@gmail.com <br />Discord:
@@ -274,19 +275,19 @@
             <div class="gpd-container" id="ic3xo">
                 <div class="gdp-row" id="ioxaf">
                     <div class="cell">
-                        <div class="gpd-feature-card" id="io0j1">
+                        <div class="gpd-feature-card">
                             <div
                                 id="card1-image"
                                 class="gpd-feature-card__header"
                             ></div>
-                            <div class="gpd-feature-card__body" id="ixn1g">
-                                <h2 class="gpd-feature-card__title" id="ilv3h">
+                            <div class="gpd-feature-card__body">
+                                <h2 class="gpd-feature-card__title">
                                     2019 - 2020
                                 </h2>
                                 <h4 class="gpd-feature-card__subtitle">
                                     Age of YouTube
                                 </h4>
-                                <div class="gpd-feature-card__text" id="i5svh">
+                                <div class="gpd-feature-card__text">
                                     In late 2019, I did a major redesign of my
                                     portfolio website, recoding it from the
                                     ground up and updating it occasionaly
@@ -310,20 +311,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="cell" id="iw63b">
+                    <div class="cell">
                         <div class="gpd-feature-card">
                             <div
                                 id="card2-image"
                                 class="gpd-feature-card__header"
                             ></div>
-                            <div class="gpd-feature-card__body" id="ivejq">
-                                <h2 class="gpd-feature-card__title" id="i83ex">
+                            <div class="gpd-feature-card__body">
+                                <h2 class="gpd-feature-card__title">
                                     2018 - 2019
                                 </h2>
                                 <h4 class="gpd-feature-card__subtitle">
                                     Age of Intro to CS class
                                 </h4>
-                                <div class="gpd-feature-card__text" id="ih1ti">
+                                <div class="gpd-feature-card__text">
                                     My first real iteration of my portfolio
                                     website. It started as an assignment in my
                                     intro to computer science class and at the
@@ -334,7 +335,6 @@
                                     bad.
                                 </div>
                                 <a
-                                    id="iuxuv"
                                     href="/march102019/"
                                     target="_blank"
                                     class="gpd-link"
@@ -352,9 +352,70 @@
             <div id="project-container" class="gpd-container">
                 <div class="project">
                     <div class="project-text-content">
+                        <h1>Wordsearcher</h1>
+                        <div id="subtitle" class="gpd-text">
+                            <em>Summer - Fall 2022</em>
+                        </div>
+                        <div id="divider"></div>
+                        <div class="gpd-text">
+                            Wordsearcher is an online tool I wrote utilizing
+                            computer vision to identify word searches and uses a
+                            simple algorithm to solve them.
+
+                            <br />
+                            <br />
+
+                            To solve the word search, it makes use of 2
+                            different models both based on the YOLO
+                            architecture. One finds where the letter grid is on
+                            the image and the other identifies the letters in
+                            that grid. This 2 step approach is decently fast and
+                            accurate which is all I needed to solve pretty much
+                            every rectangular word search. To serve the models,
+                            I am calling Azure serverless functions from a
+                            simple react front end. It's not the fastest thing
+                            in the world since the cold starts are very
+                            noticable (20-30 seconds per solve) but I think it's
+                            a good trade off for simplicity since people will
+                            generally need to solve a word search once and never
+                            again.
+
+                            <br />
+                            <br />
+
+                            <a
+                                href="https://wordsearcher.kyleyu.org"
+                                target="_blank"
+                                rel="noreferrer"
+                                class="gpd-link"
+                                >Try it: https://wordsearcher.kyleyu.org</a
+                            >
+                            <br />
+                            <a
+                                href="https://github.com/gystre/wordsearcher"
+                                target="_blank"
+                                rel="noreferrer"
+                                class="gpd-link"
+                                >Github (deeper breakdown)
+                            </a>
+                        </div>
+                    </div>
+                    <a
+                        href="https://wordsearcher.kyleyu.org"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <img
+                            class="displayImage"
+                            src="/assets/wordsearcher.jpg"
+                        />
+                    </a>
+                </div>
+                <div class="project">
+                    <div class="project-text-content">
                         <h1>Sekkei's Website</h1>
                         <div id="subtitle" class="gpd-text">
-                            <em><span>Summer 2020</span></em>
+                            <em>Summer 2020</em>
                         </div>
                         <div id="divider"></div>
                         <div class="gpd-text">
@@ -380,18 +441,21 @@
                             talking about.
 
                             <br />
+                            <br />
+
                             <a
-                                data-cke-saved-href="https://sekkeicreative.com"
+                                class="gpd-link"
                                 href="https://sekkeicreative.com"
                                 target="_blank"
+                                rel="noreferrer"
                                 >Try it: https://sekkeicreative.com</a
                             >
                         </div>
                     </div>
                     <a
-                        data-cke-saved-href="https://sekkeicreative.com"
                         href="https://sekkeicreative.com"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <img
                             class="displayImage"
@@ -403,7 +467,7 @@
                     <div class="project-text-content">
                         <h1>Kyle Reddit</h1>
                         <div id="subtitle" class="gpd-text">
-                            <em><span>January 1, 2021</span></em>
+                            <em>January 1, 2021</em>
                         </div>
                         <div id="divider"></div>
                         <div class="gpd-text">
@@ -419,20 +483,29 @@
                             successor to Kylegram which was my clone of
                             instagram but on a LAMP stack.
                             <br />
+                            <br />
                             <a
-                                data-cke-saved-href="https://github.com/Gystre/Kyle-Reddit"
+                                class="gpd-link"
                                 href="https://github.com/Gystre/Kyle-Reddit"
+                                target="_blank"
+                                rel="noreferrer"
                                 >Github</a
                             >
                             <br />
                             <a
-                                data-cke-saved-href="https://kylegodly.com"
+                                class="gpd-link"
                                 href="https://kylegodly.com"
+                                target="_blank"
+                                rel="noreferrer"
                                 >Try it: https://kylegodly.com</a
                             >
                         </div>
                     </div>
-                    <a href="https://kylegodly.com" target="_blank">
+                    <a
+                        href="https://kylegodly.com"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img
                             class="displayImage"
                             src="/assets/Kyle Reddit Screenshot 2021-01-01 141241.png"
@@ -443,7 +516,7 @@
                     <div class="project-text-content">
                         <h1>Katakana Quiz Tool</h1>
                         <div id="subtitle" class="gpd-text">
-                            <em><span>July 31, 2020</span></em>
+                            <em>July 31, 2020</em>
                         </div>
                         <div id="divider"></div>
                         <div class="gpd-text">
@@ -451,20 +524,25 @@
                             because there wasn't one available for it and I
                             liked the original tool for hiragana.
                             <br />
+                            <br />
                             <a
-                                data-cke-saved-href="https://github.com/Gystre/gystre.github.io/tree/master/katakana"
+                                class="gpd-link"
                                 href="https://github.com/Gystre/gystre.github.io/tree/master/katakana"
+                                target="_blank"
+                                rel="noreferrer"
                                 >Github</a
                             >
                             <br />
                             <a
-                                data-cke-saved-href="/katakana/"
+                                class="gpd-link"
+                                rel="noreferrer"
+                                target="_blank"
                                 href="/katakana/"
                                 >Try it</a
                             >
                         </div>
                     </div>
-                    <a href="/katakana/" target="_blank">
+                    <a href="/katakana/" target="_blank" rel="noreferrer">
                         <img
                             class="displayImage"
                             src="/assets/katakanapicture.PNG"
@@ -483,9 +561,12 @@
                             using a modified version of the A* pathfinding
                             algorithm.
                             <br />
+                            <br />
                             <a
-                                data-cke-saved-href="https://github.com/Gystre/Terraritone"
+                                class="gpd-link"
                                 href="https://github.com/Gystre/Terraritone"
+                                target="_blank"
+                                rel="noreferrer"
                                 >Github</a
                             >
                         </div>
@@ -511,15 +592,20 @@
                             Just a mini calculator to simplify all the
                             multiplying and subtraction for this project
                             <br />
+                            <br />
                             <a
-                                data-cke-saved-href="https://github.com/Gystre/gystre.github.io/tree/master/stockmarket"
+                                class="gpd-link"
                                 href="https://github.com/Gystre/gystre.github.io/tree/master/stockmarket"
+                                target="_blank"
+                                rel="noreferrer"
                                 >Github</a
                             >
                             <br />
                             <a
-                                data-cke-saved-href="/stockmarket/"
+                                class="gpd-link"
                                 href="/stockmarket/"
+                                target="_blank"
+                                rel="noreferrer"
                                 >Try it</a
                             >
                         </div>
@@ -542,22 +628,25 @@
                             Online visual array sorter for all your sorting
                             needs!
                             <br />
+                            <br />
                             <a
-                                data-cke-saved-href="https://github.com/Gystre/gystre.github.io/tree/master/arrays"
+                                class="gpd-link"
                                 href="https://github.com/Gystre/gystre.github.io/tree/master/arrays"
-                                >Github<br
-                            /></a>
-                            <a data-cke-saved-href="/arrays/" href="/arrays/"
+                                rel="noreferrer"
+                                >Github
+                            </a>
+                            <br />
+                            <a
+                                class="gpd-link"
+                                target="_blank"
+                                rel="noreferrer"
+                                href="/arrays/"
                                 >Try it</a
                             >
                             <br />
                         </div>
                     </div>
-                    <a
-                        data-cke-saved-href="/arrays/"
-                        href="/arrays/"
-                        target="_blank"
-                    >
+                    <a href="/arrays/" target="_blank" rel="noreferrer">
                         <img
                             class="displayImage"
                             src="/assets/arraycropped.png"
@@ -574,15 +663,16 @@
                             Complete with aimbot, silent aim, recoil control,
                             glow esp, bhop, and thirdperson.
                             <br />
+                            <br />
                             <a
-                                data-cke-saved-href="https://github.com/Gystre/blue-dolphin"
+                                class="gpd-link"
+                                target="_blank"
                                 href="https://github.com/Gystre/blue-dolphin"
                                 >Github</a
                             >
                         </div>
                     </div>
                     <a
-                        data-cke-saved-href="https://github.com/Gystre/blue-dolphin"
                         href="https://github.com/Gystre/blue-dolphin"
                         target="_blank"
                     >
@@ -598,19 +688,24 @@
                         <div id="divider"></div>
                         <div class="gpd-text">
                             Pretty cool 2d game space invaders using the javafx
-                            library. <br />
+                            library.
+
+                            <br />
+                            <br />
                             <a
-                                data-cke-saved-href="https://github.com/Gystre/Space-Invaders"
+                                class="gpd-link"
                                 href="https://github.com/Gystre/Space-Invaders"
+                                target="_blank"
+                                rel="noreferrer"
                                 >Github</a
                             >
                             <br />
                         </div>
                     </div>
                     <a
-                        data-cke-saved-href="https://github.com/Gystre/Space-Invaders"
                         href="https://github.com/Gystre/Space-Invaders"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <img
                             class="displayImage"
