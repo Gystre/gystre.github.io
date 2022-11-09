@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Katakana to romaji</title>
+        <title>ENSC320 - Emperor Penguins</title>
 
         <meta name="theme-color" content="#1affd1" />
-        <meta name="title" content="Kyle's Portfolio" />
+        <meta
+            name="title"
+            content="Kyle's Portfolio - ENSC320 - Emperor Penguins"
+        />
         <meta
             name="description"
             content="This is Kyle's Portfolio, here you'll find stuff Kyle's worked on and what he's up to right now! I hate writing in the third person! SEO sucks!"
@@ -18,7 +21,7 @@
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gystre.github.io" />
-        <meta property="og:title" content="Kyle's Portfolio - Katakana" />
+        <meta property="og:title" content="Kyle's Portfolio" />
         <meta
             property="og:description"
             content="This is Kyle's Portfolio, here you'll find stuff Kyle's worked on and what he's up to right now! I hate writing in the third person! SEO sucks!"
@@ -82,14 +85,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="/nav-style.css" />
         <link rel="stylesheet" href="/gjs-base.css" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../style.css" />
+        <!-- <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+        /> -->
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.2.0/lory.min.js"></script>
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         />
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-        <script src="app.js"></script>
     </head>
     <body>
         <div id="i1oh" class="gpd-navbar">
@@ -103,8 +112,8 @@
                         >
                     </div>
                     <div id="imuc" class="cell gpd-navbar__menu">
-                        <a id="irnv" href="" class="gpd-icon"
-                            ><svg
+                        <a id="irnv" href="" class="gpd-icon">
+                            <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                             >
@@ -188,171 +197,20 @@
         </div>
         <section class="gpd-section">
             <div class="gpd-container">
-                <div id="start">
-                    <h1>Katakana to Romaji</h1>
-                    <p>
-                        Select the boxes and click Start quiz! at the bottom.
-                        <br /><i>Press "enter" to start and end quiz</i>
-                    </p>
-                    <p>
-                        Based on the chart
-                        <a href="/assets/katakana-chart.jpg" target="_blank"
-                            >here</a
-                        >
-                    </p>
-
-                    <!-- contains all main, dakuten, and combo -->
-                    <div class="parent">
-                        <label id="selectAll" class="select-box">
-                            <p>All Katakana</p>
-                        </label>
-                        <!-- main katakana -->
-                        <div class="child">
-                            <h2>Main Katakana</h2>
-                            <label id="selectMain" class="select-box">
-                                <p>All Main Katakana</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>ア/a</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>カ/ka</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>サ/sa</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>タ/ta</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>ナ/na</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>ハ/ha</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>マ/ma</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>ヤ/ya</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>ラ/ra</p>
-                            </label>
-                            <label class="select-box option main">
-                                <input type="checkbox" />
-                                <p>ワ/wa</p>
-                            </label>
-                        </div>
-
-                        <!-- extra columns -->
-                        <div class="child">
-                            <h2>Dakuten</h2>
-                            <label id="selectDaku" class="select-box">
-                                <p>All Dakuten</p>
-                            </label>
-                            <label class="select-box option daku">
-                                <input type="checkbox" />
-                                <p>ガ/ga</p>
-                            </label>
-                            <label class="select-box option daku">
-                                <input type="checkbox" />
-                                <p>ザ/za</p>
-                            </label>
-                            <label class="select-box option daku">
-                                <input type="checkbox" />
-                                <p>ダ/da</p>
-                            </label>
-                            <label class="select-box option daku">
-                                <input type="checkbox" />
-                                <p>バ/ba</p>
-                            </label>
-                            <label class="select-box option daku">
-                                <input type="checkbox" />
-                                <p>パ/pa</p>
-                            </label>
-                        </div>
-
-                        <div class="child">
-                            <h2>Combination</h2>
-                            <label id="selectCombo" class="select-box">
-                                <p>All Combos</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>ニャ/nya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>チャ/cha</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>シャ/sha</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>キャ/kya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>ギャ/gya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>リャ/rya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>ミャ/mya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>ヒャ/hya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>ピャ/pya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>ビャ/bya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>ヂヤ/dya</p>
-                            </label>
-                            <label class="select-box option combo">
-                                <input type="checkbox" />
-                                <p>ジヤ/jya</p>
-                            </label>
-                        </div>
-                    </div>
-
-                    <button id="beginButton">Start quiz!</button>
+                <h1>Melting ice and Emperor Penguins</h1>
+                <div id="subtitle" class="gpd-text">
+                    <em>Kyle Yu</em>
                 </div>
-
-                <div id="quiz">
-                    <button class="backToMain">Back</button>
-
-                    <div id="card-container"></div>
-
-                    <button id="finishButton">Submit quiz</button>
-                </div>
-
-                <div id="results">
-                    <h1>Results</h1>
-                    <div id="percent-results"></div>
-                    <button class="backToMain">Back</button>
+                <div id="divider"></div>
+                <h2>What are</h2>
+                <div class="gpd-text" style="font-size: 12pt">
+                    <!-- 
+                    https://drive.google.com/file/d/1gCd-QMKxTu_06DbSwuoUXdPoCSco1jai/view
+                    * what are penguins (what do they do, where do they live, etc)
+                    * why are they worth saving
+                    * how they are affected by climate change (how we're making the problem worse and what the penguins are doing to adapt)
+                    * what can we do to help (hurdles and solutions to them)
+                   -->
                 </div>
             </div>
         </section>

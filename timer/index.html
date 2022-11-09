@@ -1,109 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer!</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Timer!</title>
+        <meta name="theme-color" content="#1affd1" />
+        <meta name="title" content="Kyle's Portfolio - Timer" />
+        <meta
+            name="description"
+            content="This is Kyle's Portfolio, here you'll find stuff Kyle's worked on and what he's up to right now! I hate writing in the third person! SEO sucks!"
+        />
+        <meta name="copyright" content="Kyle Yu" />
+        <meta
+            name="keywords"
+            content="kyle yu,portfolio,programming,computer science"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://gystre.github.io" />
+        <meta property="og:title" content="Kyle's Portfolio" />
+        <meta
+            property="og:description"
+            content="This is Kyle's Portfolio, here you'll find stuff Kyle's worked on and what he's up to right now! I hate writing in the third person! SEO sucks!"
+        />
+        <meta
+            property="og:image"
+            content="https://f004.backblazeb2.com/file/wordsearcher/portfolio_seo.png"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://gystre.github.io" />
+        <meta property="twitter:title" content="Kyle's Portfolio" />
+        <meta
+            property="twitter:description"
+            content="This is Kyle's Portfolio, here you'll find stuff Kyle's worked on and what he's up to right now! I hate writing in the third person! SEO sucks!"
+        />
+        <meta
+            property="twitter:image"
+            content="https://f004.backblazeb2.com/file/wordsearcher/portfolio_seo.png"
+        />
 
-    <link rel="icon" type="image/ico" href="https://gystre.github.io/assets/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="timer.js"></script>
+        <link
+            rel="icon"
+            type="image/ico"
+            href="https://gystre.github.io/assets/favicon.ico"
+        />
 
-    <link rel="stylesheet" href="/nav-style.css">
-    <link rel="stylesheet" href="/gjs-base.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.2.0/lory.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script async="" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-    <div id="i1oh" class="gpd-navbar">
-        <div id="isu8" class="gpd-container">
-          <div id="ityl" class="gdp-row">
-            <div id="il58" class="cell">
-                <a id="itzkh" href="/" style="color:white;"><div id="iec3r" class="gpd-text">
-                <strong>Kyle Yu</strong>
-                </div></a>
-            </div>
-            <div id="imuc" class="cell gpd-navbar__menu">
-              <a id="irnv" href="" class="gpd-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z">
-                </path>
-                </svg></a>
-            </div>
-            <div id="i79gt" class="cell gpd-navbar__items">
-              <div id="ixtj1" class="gdp-row gpd-navbar__items-grid">
-                <div id="ip28l" class="cell gpd-navbar__item">
-                  <a href="/" id="igf2a" class="gpd-navbar__item-link">HOME</a>
-                </div>
-                <div id="ijjhn" class="cell gpd-navbar__item">
-                  <a href="/#about-container" id="i984z" class="gpd-navbar__item-link">ABOUT</a>
-                </div>
-                <div id="i6r6s" class="cell gpd-navbar__item">
-                  <div class="dropdown-split btn-group dropdown">
-                    <a href="/#project-container" role="button" id="iff5av" class="btn btn-primary">PROJECTS</a>
-                    <button aria-haspopup="true" data-toggle="dropdown" type="button" id="i7hshl" class="btn dropdown-toggle dropdown-toggle-split btn-primary"></button>
-                    <div role="menu" class="dropdown-menu">
-                        <a role="presentation" href="/arrays/" class="dropdown-item">Array Sorter</a>
-                        <a role="presentation" href="/timer" class="dropdown-item">Timer</a>
-                    </div>
-                  </div>
-                </div>
-                <div id="ijjhn" class="cell gpd-navbar__item">
-                    <a id="ij0jw" href="/katakana" class="gpd-navbar__item-link">KATAKANA</a>
-                </div>
-                <div id="icj5d" class="cell gpd-navbar__item">
-                  <a href="/repo/" target="_blank" class="gpd-navbar__item-link">REPO</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section id="ifit4" class="gpd-section">
-        <div id="ic20y" class="gpd-container">
-            <h1 id="h"></h1>
-            <h1 id="m"></h1>
-            <h1 id="s"></h1>
-            <h1 id="ms"></h1>
-            <input placeholder="hours" type="number" min="0" oninput="validity.valid||(value='');" id="h-input">
-            <input placeholder="minutes" type="number" min="0" oninput="validity.valid||(value='');" id="m-input">
-            <input placeholder="seconds" type="number" min="0" oninput="validity.valid||(value='');" id="s-input">
-            <button onclick="start()">start</button>
-            <button onclick="stop()">stop</button>
-            <button onclick="reset()">reset</button>
-        </div>
-      </section>
-      <script>var items = document.querySelectorAll('#irnv');
-        for (var i = 0, len = items.length; i < len; i++) {
-          (function(){
-            var t,e=0,n='gjs-collapse',r='max-height',o='ease-in-out',i=.25,a=function(){
-              var t,e=document.createElement('void'),n={
-                transition:'transitionend',OTransition:'oTransitionEnd',MozTransition:'transitionend',WebkitTransition:'webkitTransitionEnd'};
-              for(t in n)if(void 0!==e.style[t])return n[t]}
-            (),s=function(t){
-              e=1;
-              var n=function(t){
-                var e=window.getComputedStyle(t),n=e.display,o=parseInt(e[r]);
-                if('none'!==n&&'0'!==o)return t.offsetHeight;
-                t.style.height='auto',t.style.display='block',t.style.position='absolute',t.style.visibility='hidden';
-                var i=t.offsetHeight;
-                return t.style.height='',t.style.display='',t.style.position='',t.style.visibility='',i}
-              (t),a=t.style;
-              a.display='block',a.transition=r+' '+i+'s '+o,a.overflowY='hidden',''==a[r]&&(a[r]=0),0==parseInt(a[r])?(a[r]='0',setTimeout(function(){
-                a[r]=n+'px'}
-                                                                                                                                           ,10)):a[r]='0'};
-            n in this||this.addEventListener('click',function(n){
-              if(n.preventDefault(),!e){
-                var o=this.closest('.gpd-navbar').querySelector(".gpd-navbar__items");
-                s(o),t||(o.addEventListener(a,function(){
-                  e=0;
-                  var t=o.style;
-                  0==parseInt(t[r])&&(t.display='',t[r]='')}
-                                           ),t=1)}
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="/gjs-base.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/style.css" />
+        <script
+            async=""
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        ></script>
+
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-VRMF0BLZ3S"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
             }
-                                            ),this[n]=1}
-           .bind(items[i]))();
-        }
-      </script>
-</body>
+            gtag("js", new Date());
+
+            gtag("config", "G-VRMF0BLZ3S");
+        </script>
+
+        <link
+            rel="icon"
+            type="image/ico"
+            href="https://gystre.github.io/assets/favicon.ico"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="timer.js"></script>
+
+        <link rel="stylesheet" href="/nav-style.css" />
+        <link rel="stylesheet" href="/gjs-base.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.2.0/lory.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <script
+            async=""
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        ></script>
+    </head>
+    <body>
+        <div id="i1oh" class="gpd-navbar">
+            <div id="isu8" class="gpd-container">
+                <div id="ityl" class="gdp-row">
+                    <div id="il58" class="cell">
+                        <a id="itzkh" href="/" style="color: white"
+                            ><div id="iec3r" class="gpd-text">
+                                <strong>Kyle Yu</strong>
+                            </div></a
+                        >
+                    </div>
+                    <div id="imuc" class="cell gpd-navbar__menu">
+                        <a id="irnv" href="" class="gpd-icon"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"
+                                ></path></svg
+                        ></a>
+                    </div>
+                    <div id="i79gt" class="cell gpd-navbar__items">
+                        <div id="ixtj1" class="gdp-row gpd-navbar__items-grid">
+                            <div id="ip28l" class="cell gpd-navbar__item">
+                                <a
+                                    href="/"
+                                    id="igf2a"
+                                    class="gpd-navbar__item-link"
+                                    >HOME</a
+                                >
+                            </div>
+                            <div id="ijjhn" class="cell gpd-navbar__item">
+                                <a
+                                    href="/#about-container"
+                                    id="i984z"
+                                    class="gpd-navbar__item-link"
+                                    >ABOUT</a
+                                >
+                            </div>
+                            <div id="i6r6s" class="cell gpd-navbar__item">
+                                <div class="dropdown-split btn-group dropdown">
+                                    <a
+                                        href="/#project-container"
+                                        role="button"
+                                        id="iff5av"
+                                        class="btn btn-primary"
+                                        >PROJECTS</a
+                                    >
+                                    <button
+                                        aria-haspopup="true"
+                                        data-toggle="dropdown"
+                                        type="button"
+                                        id="i7hshl"
+                                        class="btn dropdown-toggle dropdown-toggle-split btn-primary"
+                                    ></button>
+                                    <div role="menu" class="dropdown-menu">
+                                        <a
+                                            role="presentation"
+                                            href="/arrays/"
+                                            class="dropdown-item"
+                                            >Array Sorter</a
+                                        >
+                                        <a
+                                            role="presentation"
+                                            href="/timer"
+                                            class="dropdown-item"
+                                            >Timer</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ijjhn" class="cell gpd-navbar__item">
+                                <a
+                                    id="ij0jw"
+                                    href="/katakana"
+                                    class="gpd-navbar__item-link"
+                                    >KATAKANA</a
+                                >
+                            </div>
+                            <div id="icj5d" class="cell gpd-navbar__item">
+                                <a
+                                    href="/repo/"
+                                    target="_blank"
+                                    class="gpd-navbar__item-link"
+                                    >REPO</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="gpd-section">
+            <div class="gpd-container">
+                <h1 id="h"></h1>
+                <h1 id="m"></h1>
+                <h1 id="s"></h1>
+                <h1 id="ms"></h1>
+                <input
+                    placeholder="hours"
+                    type="number"
+                    min="0"
+                    oninput="validity.valid||(value='');"
+                    id="h-input"
+                />
+                <input
+                    placeholder="minutes"
+                    type="number"
+                    min="0"
+                    oninput="validity.valid||(value='');"
+                    id="m-input"
+                />
+                <input
+                    placeholder="seconds"
+                    type="number"
+                    min="0"
+                    oninput="validity.valid||(value='');"
+                    id="s-input"
+                />
+                <button onclick="start()">start</button>
+                <button onclick="stop()">stop</button>
+                <button onclick="reset()">reset</button>
+            </div>
+        </section>
+        <script>
+            var items = document.querySelectorAll("#irnv");
+            for (var i = 0, len = items.length; i < len; i++) {
+                (function () {
+                    var t,
+                        e = 0,
+                        n = "gjs-collapse",
+                        r = "max-height",
+                        o = "ease-in-out",
+                        i = 0.25,
+                        a = (function () {
+                            var t,
+                                e = document.createElement("void"),
+                                n = {
+                                    transition: "transitionend",
+                                    OTransition: "oTransitionEnd",
+                                    MozTransition: "transitionend",
+                                    WebkitTransition: "webkitTransitionEnd",
+                                };
+                            for (t in n) if (void 0 !== e.style[t]) return n[t];
+                        })(),
+                        s = function (t) {
+                            e = 1;
+                            var n = (function (t) {
+                                    var e = window.getComputedStyle(t),
+                                        n = e.display,
+                                        o = parseInt(e[r]);
+                                    if ("none" !== n && "0" !== o)
+                                        return t.offsetHeight;
+                                    (t.style.height = "auto"),
+                                        (t.style.display = "block"),
+                                        (t.style.position = "absolute"),
+                                        (t.style.visibility = "hidden");
+                                    var i = t.offsetHeight;
+                                    return (
+                                        (t.style.height = ""),
+                                        (t.style.display = ""),
+                                        (t.style.position = ""),
+                                        (t.style.visibility = ""),
+                                        i
+                                    );
+                                })(t),
+                                a = t.style;
+                            (a.display = "block"),
+                                (a.transition = r + " " + i + "s " + o),
+                                (a.overflowY = "hidden"),
+                                "" == a[r] && (a[r] = 0),
+                                0 == parseInt(a[r])
+                                    ? ((a[r] = "0"),
+                                      setTimeout(function () {
+                                          a[r] = n + "px";
+                                      }, 10))
+                                    : (a[r] = "0");
+                        };
+                    n in this ||
+                        this.addEventListener("click", function (n) {
+                            if ((n.preventDefault(), !e)) {
+                                var o =
+                                    this.closest(".gpd-navbar").querySelector(
+                                        ".gpd-navbar__items"
+                                    );
+                                s(o),
+                                    t ||
+                                        (o.addEventListener(a, function () {
+                                            e = 0;
+                                            var t = o.style;
+                                            0 == parseInt(t[r]) &&
+                                                ((t.display = ""), (t[r] = ""));
+                                        }),
+                                        (t = 1));
+                            }
+                        }),
+                        (this[n] = 1);
+                }.bind(items[i])());
+            }
+        </script>
+    </body>
 </html>
