@@ -12,6 +12,7 @@ body {
 }
 .gpd-navbar__item {
     flex: 0 1 auto;
+    margin: 0 15px 0 0;
 }
 .gpd-navbar__item-link {
     color: inherit;
@@ -72,10 +73,7 @@ body {
     padding: 5px 5px 5px 5px;
     margin: 0 15px 0 0;
 }
-#ijjhn {
-    margin: 0 15px 0 0;
-}
-#iuocn {
+#section-landing {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 200;
     padding: 50px 0;
@@ -132,10 +130,6 @@ body {
     height: 3px;
     margin: 10px 10px 10px 10px;
     background-color: rgba(0, 0, 0, 0.05);
-}
-
-#icj5d {
-    margin: 0 15px 0 0;
 }
 #itzkh {
     display: inline-block;

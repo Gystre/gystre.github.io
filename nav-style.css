@@ -1,130 +1,133 @@
+/* this stylesheet is for the all the other pages that don't use the homepage navbar */
 * {
     box-sizing: border-box;
-  }
-  body {
+}
+body {
     margin: 0;
-  }
-  .gpd-navbar{
-    width:100%;
-  }
-  #i1oh{
-    font-family:Tahoma, Geneva, sans-serif;
-    font-size:20px;
-    text-decoration:none;
-    text-align:center;
-    color:#ffffff;
-    position:sticky;
-    z-index:10;
-    background-color:rgba(109,14,133,0.54);
-    background-image:linear-gradient(to right, rgb(217, 131, 166) 0%, rgb(113, 56, 115) 100%);
-    background-repeat:repeat;
-    background-position:left top;
-    background-attachment:scroll;
-    background-size:auto;
-    top:0;
-  }
-  #isu8{
-    padding:0;
-  }
-  #ityl{
-    justify-content:space-between;
-    align-items:center;
-    min-height:auto;
-    padding:10px 10px 10px 10px;
-  }
-  #il58{
-    flex:0 1 auto;
-    letter-spacing:2px;
-  }
-  #itzkh{
-    display:inline-block;
-    padding:5px;
-    min-height:50px;
-    min-width:50px;
+}
+.gpd-navbar {
+    width: 100%;
+}
+#non-main-nav {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    position: sticky;
+    z-index: 10;
+    background-color: rgba(109, 14, 133, 0.54);
+    background-image: linear-gradient(
+        to right,
+        rgb(217, 131, 166) 0%,
+        rgb(113, 56, 115) 100%
+    );
+    background-repeat: repeat;
+    background-position: left top;
+    background-attachment: scroll;
+    background-size: auto;
+    top: 0;
+}
+#isu8 {
+    padding: 0;
+}
+#ityl {
+    justify-content: space-between;
+    align-items: center;
+    min-height: auto;
+    padding: 10px 10px 10px 10px;
+}
+#il58 {
+    flex: 0 1 auto;
+    letter-spacing: 2px;
+}
+#itzkh {
+    display: inline-block;
+    padding: 5px;
+    min-height: 50px;
+    min-width: 50px;
     cursor: pointer;
-  }
-  #iec3r{
-    letter-spacing:normal;
-    font-weight:900;
-  }
-  .gpd-navbar__menu{
-    display:none;
-  }
-  #imuc{
-    flex:0 1 auto;
-  }
-  #irnv{
-    width:35px;
-    height:35px;
-    cursor:pointer;
+}
+#iec3r {
+    letter-spacing: normal;
+    font-weight: 900;
+}
+.gpd-navbar__menu {
+    display: none;
+}
+#imuc {
+    flex: 0 1 auto;
+}
+#irnv {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
     color: inherit;
-  }
-  #i79gt{
-    flex:0 1 auto;
-    flex-basis:1auto;
-    text-decoration:none;
-    font-weight:100;
-    font-family:Tahoma, Geneva, sans-serif;
-    letter-spacing:2px;
-  }
-  #ixtj1{
-    align-items:center;
-    min-height:auto;
-  }
-  .gpd-navbar__item{
-    flex:0 1 auto;
-  }
-  #ip28l{
-    padding:5px 5px 5px 5px;
-    margin:0 15px 0 0;
-  }
-  .gpd-navbar__item-link{
-    color:inherit;
-    text-decoration:none;
-  }
-  #ijjhn{
-    margin:0 15px 0 0;
-  }
-  #i6r6s{
-    padding:5px 5px 5px 5px;
-    margin:0 15px 0 0;
-  }
-  #iff5av{
-    background-color:rgb(0, 123, 255, 0);
-    color:#ffffff;
-    border:1px solid #ffffff;
-    line-height:30px;
-    font-size:20px;
-  }
-  #i7hshl{
-    border:1px solid #ffffff;
-    background-color:rgba(0,106,221,0);
-  }
-  #icj5d{
-    margin:0 15px 0 0;
-  }
-  @media (max-width: 768px){
-    .gpd-navbar__menu{
-      display:block;
+}
+#i79gt {
+    flex: 0 1 auto;
+    flex-basis: 1auto;
+    text-decoration: none;
+    font-weight: 100;
+    font-family: Tahoma, Geneva, sans-serif;
+    letter-spacing: 2px;
+}
+#ixtj1 {
+    align-items: center;
+    min-height: auto;
+}
+#ip28l {
+    padding: 5px 5px 5px 5px;
+    margin: 0 15px 0 0;
+}
+.gpd-navbar__item-link {
+    color: inherit;
+    text-decoration: none;
+}
+#ijjhn {
+    margin: 0 15px 0 0;
+}
+#i6r6s {
+    padding: 5px 5px 5px 5px;
+    margin: 0 15px 0 0;
+}
+#iff5av {
+    background-color: rgb(0, 123, 255, 0);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    line-height: 30px;
+    font-size: 20px;
+}
+#i7hshl {
+    border: 1px solid #ffffff;
+    background-color: rgba(0, 106, 221, 0);
+}
+
+/* 
+DO NOT DELETE THESE
+these are used in all the other pages that don't use the main nav bar
+*/
+@media (max-width: 768px) {
+    .gpd-navbar__menu {
+        display: block;
     }
-    .gpd-navbar__items{
-      display:none;
-      width:100%;
+    .gpd-navbar__items {
+        display: none;
+        width: 100%;
     }
-    .gpd-navbar__items-grid{
-      flex-wrap:wrap;
+    .gpd-navbar__items-grid {
+        flex-wrap: wrap;
     }
-    .gpd-navbar__item{
-      flex:1 1 100%;
+    .gpd-navbar__item {
+        flex: 1 1 100%;
     }
-    .gpd-navbar__item-link{
-      width:100%;
+    .gpd-navbar__item-link {
+        width: 100%;
     }
-  }
-  @media (max-width: 375px){
-    #irnv{
-      color:#ffffff;
-      border:0 solid #ffffff;
+}
+@media (max-width: 375px) {
+    #irnv {
+        color: #ffffff;
+        border: 0 solid #ffffff;
     }
-  }
-  
+}

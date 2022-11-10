@@ -1,2 +1,2 @@
 # gystre.github.io
-My portfolio website
+My portfolio website. Lots of useless css and html left over after recreating the site from where it was originally designed on grapedrop. There also isn't any preliminary build step to clean up after me LOL. Maintaining and updating this thing is pretty much impossible right now because it's so time consuming. Probs gonna rewrite soon, maybe something with 3d effects as you scroll the page but might seem like too much work rn.
